@@ -1,0 +1,9 @@
+output_file=PF02265_pairs.out
+mode=pairwise
+matrix_file=blosum62.mat
+pairwise_random=0,0,1
+gap_penalty=12.0
+constant = 0
+seq_file=PF02265.pir
+print_horizontal=
+pairwise_align_file=PF02265_pairs.fasta

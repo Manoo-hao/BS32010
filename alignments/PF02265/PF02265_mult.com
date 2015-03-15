@@ -1,0 +1,10 @@
+output_file=PF02265_mult.out
+mode=multiple              
+matrix_file=blosum62.mat         
+gap_penalty=12.0            
+constant=0
+consplot=mz                
+print_vertical=            
+seq_file=PF02265.pir       
+order_file=PF02265_pairs.tord
+tree_file=PF02265_pairs.tree
