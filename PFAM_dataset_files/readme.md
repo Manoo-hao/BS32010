@@ -19,6 +19,12 @@ with 100 randomisation and the blosum62 matrix.
 
 Output files from running the program order on PF01924_pairs100.out.
 
+###PF01924_mult.out and PF01924_modified.out
+PF01924_mult.out is the file resulting from multiple alignment with 
+amps. PF01924_modified.out is the same file with the identifier >P1; 
+replaced by the identifier >.
+
 ###PF_parser_output.out
 
-A tab delimited table comparable to the one created for the serprot_dataset.
+A tab delimited table comparable to the one created for the serprot 
+dataset in the parent folder.

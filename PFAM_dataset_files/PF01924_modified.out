@@ -1,0 +1,634 @@
+1----------------------------------------------------------------------------------------------------------------------------------
+ ------------------------------                          M U L T A L I G N                          -------------------------------
+ ----------------------------------------------------------------------------------------------------------------------------------
+ ------------------------------                                 by                                  -------------------------------
+ ------------------------------          Geoffrey J. Barton - geoff@compbio.dundee.ac.uk            -------------------------------
+ ------------------------------                   http://www.compbio.dundee.ac.uk                   -------------------------------
+ ----------------------------------------------------------------------------------------------------------------------------------
+ ------------------------------                            Please cite:                             -------------------------------
+ ------------------------------      Barton, G. J. (1990) Methods in Enzymology 183, 403-428.       -------------------------------
+ ------------------------------                      and also as appropriate:                       -------------------------------
+ ----------       Multiple alignment: Barton, G. J. and Sternberg, M. J. E. (1987), J. Mol. Biol., 198, 327-337.        -----------
+ ----------        Flexible Patterns: Barton, G. J. and Sternberg, M. J. E. (1990), J. Mol. Biol., 212, 389-402.        -----------
+ ----------   Structure Dependent Gap-Penalties: Barton, G. J. and Sternberg, M. J. E. (1987), Prot. Eng., 1, 89-94.    -----------
+ ----------------------------------------------------------------------------------------------------------------------------------
+ !!!!!!!!!!!!!!!!!!!!                       Copyright (c) Geoffrey J Barton (1987,1997)                       !!!!!!!!!!!!!!!!!!!!!
+ ----------------------------------------------------------------------------------------------------------------------------------
+ Multalign Version D2.3a - November 2003
+ Maximum allowed sequence length =  5000
+ Maximum pattern length          =  5000
+ Maximum number of sequences     =  5000
+ ----------------
+ matrix file read
+ blosum62_p Matrix  Min: 0 Max: 15                                               
+ ---------------------------------
+ Gap penalty :    12.00
+ ----------------------
+ Constant :    0
+ ---------------
+ Conservation profile enabled 
+ ----------------------------
+ MZ type conservation
+ --------------------
+ Vertical format output selected 
+ -------------------------------
+ Sequence file : PF01924.pir
+ ---------------------------
+
+ Order file : PF01924_pairs100.tord
+ ----------------------------------
+ Tree file defined: PF01924_pairs100.tree
+ ----------------------------------------
+  
+ MULTIPLE mode has been defined
+  
+ Checking minimal command set
+ ----------------------------
+ No iteration value defined - assume a value of 1
+ ------------------------------------------------
+ Commands satisfy this mode..
+ ----------------------------
+ ------------------------------
+ Sequences defined in SEQ file:
+ ------------------------------
+ Index   Identifier   Length                            Name                            File order     Score     with
+     1   >A0LAJ4_MAGSM/2-3   358 A0LAJ4_MAGSM 358 residues                                          129      0.00         0
+     2   >Q2Y8F6_NITMU/1-3   361 Q2Y8F6_NITMU 361 residues                                          127      0.00         0
+     3   >A5EUJ0_BRASB/1-3   361 A5EUJ0_BRASB 361 residues                                          128      0.00         0
+     4   >F2G4P6_ALTMD/1-3   360 F2G4P6_ALTMD 360 residues                                          126      0.00         0
+     5   >A0L606_MAGSM/2-3   361 A0L606_MAGSM 361 residues                                          125      0.00         0
+     6   >A6LXR6_CLOB8/2-3   357 A6LXR6_CLOB8 357 residues                                           14      0.00         0
+     7   >A7GE79_CLOBL/3-3   353 A7GE79_CLOBL 353 residues                                           13      0.00         0
+     8   >O58609_PYRHO/7-3   360 O58609_PYRHO 360 residues                                          104      0.00         0
+     9   >Q977P6_THELI/8-3   361 Q977P6_THELI 361 residues                                          103      0.00         0
+    10   >Q5JII1_PYRKO/10-   362 Q5JII1_PYRKO 362 residues                                          105      0.00         0
+    11   >Q2FMR2_METHJ/1-3   340 Q2FMR2_METHJ 340 residues                                          114      0.00         0
+    12   >Q8TYR6_METKA/5-3   346 Q8TYR6_METKA 346 residues                                          112      0.00         0
+    13   >A3DKX4_STAMF/12-   364 A3DKX4_STAMF 364 residues                                          121      0.00         0
+    14   >A2BKU8_HYPBU/21-   371 A2BKU8_HYPBU 371 residues                                          120      0.00         0
+    15   >A1S0N0_THEPD/22-   373 A1S0N0_THEPD 373 residues                                          118      0.00         0
+    16   >A1RR05_PYRIL/11-   376 A1RR05_PYRIL 376 residues                                          117      0.00         0
+    17   >A8A9J4_IGNH4/4-3   362 A8A9J4_IGNH4 362 residues                                          119      0.00         0
+    18   >Q2NEU1_METST/1-3   347 Q2NEU1_METST 347 residues                                          111      0.00         0
+    19   >A5ULS2_METS3/1-3   348 A5ULS2_METS3 348 residues                                          110      0.00         0
+    20   >O27144_METTH/1-3   348 O27144_METTH 348 residues                                          109      0.00         0
+    21   >Q2IN68_ANADE/14-   358 Q2IN68_ANADE 358 residues                                          122      0.00         0
+    22   >Q6M0I1_METMP/10-   350 Q6M0I1_METMP 350 residues                                          107      0.00         0
+    23   >Y993_METJA/6-358   353 Y993_METJA 353 residues                                            106      0.00         0
+    24   >A6UVF5_META3/7-3   366 A6UVF5_META3 366 residues                                          108      0.00         0
+    25   >Q0W4N4_UNCMA/4-3   343 Q0W4N4_UNCMA 343 residues                                          113      0.00         0
+    26   >Q7VJC1_HELHP/21-   359 Q7VJC1_HELHP 359 residues                                           79      0.00         0
+    27   >Q7M9N5_WOLSU/12-   359 Q7M9N5_WOLSU 359 residues                                           78      0.00         0
+    28   >A6Q3M7_NITSB/12-   364 A6Q3M7_NITSB 364 residues                                           75      0.00         0
+    29   >A3D3S4_SHEB5/13-   359 A3D3S4_SHEB5 359 residues                                           72      0.00         0
+    30   >A3QDS5_SHELP/13-   359 A3QDS5_SHELP 359 residues                                           71      0.00         0
+    31   >A1S671_SHEAM/24-   359 A1S671_SHEAM 359 residues                                           67      0.00         0
+    32   >A8H458_SHEPA/13-   359 A8H458_SHEPA 359 residues                                           69      0.00         0
+    33   >Q1ZT04_PHOAS/14-   359 Q1ZT04_PHOAS 359 residues                                           68      0.00         0
+    34   >Q081V8_SHEFN/13-   359 Q081V8_SHEFN 359 residues                                           70      0.00         0
+    35   >A4SLV8_AERS4/13-   357 A4SLV8_AERS4 357 residues                                           73      0.00         0
+    36   >Q31DZ2_THICR/15-   359 Q31DZ2_THICR 359 residues                                           65      0.00         0
+    37   >A6QAT8_SULNB/15-   366 A6QAT8_SULNB 366 residues                                           76      0.00         0
+    38   >Q1ZGM9_9GAMM/12-   364 Q1ZGM9_9GAMM 364 residues                                           74      0.00         0
+    39   >Q4HSJ7_CAMUP/9-3   353 Q4HSJ7_CAMUP 353 residues                                           64      0.00         0
+    40   >A7H3Q9_CAMJD/9-3   353 A7H3Q9_CAMJD 353 residues                                           63      0.00         0
+    41   >A7I1P6_CAMHC/9-3   353 A7I1P6_CAMHC 353 residues                                           61      0.00         0
+    42   >A7GYJ2_CAMC5/9-3   353 A7GYJ2_CAMC5 353 residues                                           60      0.00         0
+    43   >B9KGD1_CAMLR/9-3   353 B9KGD1_CAMLR 353 residues                                           62      0.00         0
+    44   >Q1Z837_PHOPR/13-   359 Q1Z837_PHOPR 359 residues                                           66      0.00         0
+    45   >Q20XQ7_RHOPB/15-   368 Q20XQ7_RHOPB 368 residues                                           52      0.00         0
+    46   >A1B6P8_PARDP/9-3   365 A1B6P8_PARDP 365 residues                                           51      0.00         0
+    47   >Q5PEA0_SALPA/9-3   361 Q5PEA0_SALPA 361 residues                                           57      0.00         0
+    48   >A6VPG1_ACTSZ/9-3   362 A6VPG1_ACTSZ 362 residues                                           53      0.00         0
+    49   >Q6D7U3_ERWCT/9-3   361 Q6D7U3_ERWCT 361 residues                                           56      0.00         0
+    50   >A0P441_9RHOB/9-3   363 A0P441_9RHOB 363 residues                                          100      0.00         0
+    51   >Q2SQT0_HAHCH/9-3   361 Q2SQT0_HAHCH 361 residues                                           84      0.00         0
+    52   >A0P1M6_9RHOB/9-3   363 A0P1M6_9RHOB 363 residues                                          101      0.00         0
+    53   >Q83WU7_THIRO/9-3   360 Q83WU7_THIRO 360 residues                                           99      0.00         0
+    54   >Q478N8_DECAR/9-3   363 Q478N8_DECAR 363 residues                                           96      0.00         0
+    55   >A1KC63_AZOSB/9-3   364 A1KC63_AZOSB 364 residues                                           93      0.00         0
+    56   >Q2BN39_9GAMM/9-3   363 Q2BN39_9GAMM 363 residues                                           86      0.00         0
+    57   >A2SJM7_METPP/9-3   363 A2SJM7_METPP 363 residues                                           94      0.00         0
+    58   >A4JRG7_BURVG/9-3   362 A4JRG7_BURVG 362 residues                                           95      0.00         0
+    59   >Q2W6T2_MAGSA/9-3   363 Q2W6T2_MAGSA 363 residues                                           97      0.00         0
+    60   >HYPD2_BRAJA/9-37   363 HYPD2_BRAJA 363 residues                                            89      0.00         0
+    61   >HYPD_RHILV/9-371   363 HYPD_RHILV 363 residues                                             90      0.00         0
+    62   >HYPD1_BRAJA/9-37   363 HYPD1_BRAJA 363 residues                                            88      0.00         0
+    63   >Q13BX4_RHOPS/9-3   363 Q13BX4_RHOPS 363 residues                                           91      0.00         0
+    64   >Q20ZZ2_RHOPB/9-3   359 Q20ZZ2_RHOPB 359 residues                                           92      0.00         0
+    65   >Q0A730_ALHEH/9-3   363 Q0A730_ALHEH 363 residues                                           87      0.00         0
+    66   >HYPD_AZOVI/9-370   362 HYPD_AZOVI 362 residues                                             85      0.00         0
+    67   >B2JX88_BURP8/9-3   357 B2JX88_BURP8 357 residues                                           82      0.00         0
+    68   >A4BQ13_9GAMM/9-3   361 A4BQ13_9GAMM 361 residues                                           49      0.00         0
+    69   >Q7WXP3_CUPNH/9-3   361 Q7WXP3_CUPNH 361 residues                                           48      0.00         0
+    70   >A5E9B5_BRASB/9-3   361 A5E9B5_BRASB 361 residues                                           50      0.00         0
+    71   >Q1J410_SPHAL/9-3   361 Q1J410_SPHAL 361 residues                                           47      0.00         0
+    72   >A8GEJ9_SERP5/9-3   361 A8GEJ9_SERP5 361 residues                                           55      0.00         0
+    73   >A0YJ31_LYNSP/9-3   361 A0YJ31_LYNSP 361 residues                                           40      0.00         0
+    74   >Q117W1_TRIEI/9-3   361 Q117W1_TRIEI 361 residues                                           41      0.00         0
+    75   >A3N1X6_ACTP2/9-3   362 A3N1X6_ACTP2 362 residues                                           54      0.00         0
+    76   >Q6PTA3_AZOCA/9-3   361 Q6PTA3_AZOCA 361 residues                                           46      0.00         0
+    77   >Q3M485_ANAVT/9-3   357 Q3M485_ANAVT 357 residues                                           39      0.00         0
+    78   >A4FE76_SACEN/9-3   356 A4FE76_SACEN 356 residues                                           45      0.00         0
+    79   >A0QVU9_MYCS2/9-3   355 A0QVU9_MYCS2 355 residues                                           43      0.00         0
+    80   >A8L5A7_FRASN/9-3   356 A8L5A7_FRASN 356 residues                                           44      0.00         0
+    81   >O67225_AQUAE/14-   364 O67225_AQUAE 364 residues                                           59      0.00         0
+    82   >Q6NIV0_CORDI/9-3   354 Q6NIV0_CORDI 354 residues                                           42      0.00         0
+    83   >Q0EZV7_9PROT/9-3   357 Q0EZV7_9PROT 357 residues                                           98      0.00         0
+    84   >A5IEY6_LEGPC/9-3   357 A5IEY6_LEGPC 357 residues                                           83      0.00         0
+    85   >Q17WE6_HELAH/12-   359 Q17WE6_HELAH 359 residues                                           80      0.00         0
+    86   >A8EUN7_ARCB4/16-   358 A8EUN7_ARCB4 358 residues                                           77      0.00         0
+    87   >P72620_SYNY3/9-3   356 P72620_SYNY3 356 residues                                           38      0.00         0
+    88   >A3ITK3_9CHRO/9-3   356 A3ITK3_9CHRO 356 residues                                           37      0.00         0
+    89   >Q8KBJ3_CHLTE/9-3   353 Q8KBJ3_CHLTE 353 residues                                           25      0.00         0
+    90   >B4SCQ1_PELPB/9-3   353 B4SCQ1_PELPB 353 residues                                           23      0.00         0
+    91   >Q0RN44_FRAAA/9-3   353 Q0RN44_FRAAA 353 residues                                           34      0.00         0
+    92   >Q825T0_STRAW/9-3   353 Q825T0_STRAW 353 residues                                           33      0.00         0
+    93   >B8G3N7_CHLAD/9-3   353 B8G3N7_CHLAD 353 residues                                           32      0.00         0
+    94   >Q01S96_SOLUE/9-3   353 Q01S96_SOLUE 353 residues                                           27      0.00         0
+    95   >A0QUN9_MYCS2/9-3   353 A0QUN9_MYCS2 353 residues                                           30      0.00         0
+    96   >Q2JE40_FRASC/9-3   353 Q2JE40_FRASC 353 residues                                           31      0.00         0
+    97   >A8LH32_FRASN/9-3   353 A8LH32_FRASN 353 residues                                           28      0.00         0
+    98   >B3EEL2_CHLL2/9-3   353 B3EEL2_CHLL2 353 residues                                           24      0.00         0
+    99   >A6C223_9PLAN/9-3   353 A6C223_9PLAN 353 residues                                           35      0.00         0
+   100   >B4S9I9_PROA2/9-3   353 B4S9I9_PROA2 353 residues                                           26      0.00         0
+   101   >Q31KK3_SYNE7/9-3   355 Q31KK3_SYNE7 355 residues                                           36      0.00         0
+   102   >Q1IQZ4_KORVE/9-3   353 Q1IQZ4_KORVE 353 residues                                           29      0.00         0
+   103   >A4CGN2_ROBBH/9-3   353 A4CGN2_ROBBH 353 residues                                           17      0.00         0
+   104   >Q01R78_SOLUE/9-3   353 Q01R78_SOLUE 353 residues                                           22      0.00         0
+   105   >A5FCZ4_FLAJ1/9-3   350 A5FCZ4_FLAJ1 350 residues                                           18      0.00         0
+   106   >Q2RXN4_RHORT/12-   364 Q2RXN4_RHORT 364 residues                                           81      0.00         0
+   107   >Q1NVR4_9DELT/9-3   391 Q1NVR4_9DELT 391 residues                                           19      0.00         0
+   108   >A3Z0T6_9SYNE/9-3   358 A3Z0T6_9SYNE 358 residues                                           21      0.00         0
+   109   >B4U671_HYDS0/7-3   354 B4U671_HYDS0 354 residues                                           58      0.00         0
+   110   >Q97KV5_CLOAB/9-3   353 Q97KV5_CLOAB 353 residues                                           11      0.00         0
+   111   >Q2LVY3_SYNAS/9-3   356 Q2LVY3_SYNAS 356 residues                                            7      0.00         0
+   112   >B8FQW4_DESHD/12-   353 B8FQW4_DESHD 353 residues                                            8      0.00         0
+   113   >A6FYB1_9DELT/9-3   360 A6FYB1_9DELT 360 residues                                           20      0.00         0
+   114   >Q72F89_DESVH/11-   354 Q72F89_DESVH 354 residues                                            3      0.00         0
+   115   >Q316I1_DESDG/9-3   354 Q316I1_DESDG 354 residues                                            2      0.00         0
+   116   >Q1MPW5_LAWIP/9-3   354 Q1MPW5_LAWIP 354 residues                                            1      0.00         0
+   117   >Q6AQR5_DESPS/9-3   353 Q6AQR5_DESPS 353 residues                                            4      0.00         0
+   118   >A5FPQ9_DEHSB/9-3   354 A5FPQ9_DEHSB 354 residues                                           10      0.00         0
+   119   >A1HTX9_9FIRM/9-3   355 A1HTX9_9FIRM 355 residues                                            9      0.00         0
+   120   >B8D1S3_HALOH/9-3   354 B8D1S3_HALOH 354 residues                                           12      0.00         0
+   121   >Q3ABW4_CARHZ/3-3   356 Q3ABW4_CARHZ 356 residues                                           15      0.00         0
+   122   >Q8NKV0_ACIAM/14-   370 Q8NKV0_ACIAM 370 residues                                          116      0.00         0
+   123   >Q2RGH3_MOOTA/9-3   362 Q2RGH3_MOOTA 362 residues                                            6      0.00         0
+   124   >A1SU74_PSYIN/14-   354 A1SU74_PSYIN 354 residues                                          123      0.00         0
+   125   >A5ZMU1_9FIRM/1-3   349 A5ZMU1_9FIRM 349 residues                                           16      0.00         0
+   126   >O28901_ARCFU/14-   355 O28901_ARCFU 355 residues                                          102      0.00         0
+   127   >Q8PUL8_METMA/9-3   364 Q8PUL8_METMA 364 residues                                          124      0.00         0
+   128   >Q6API1_DESPS/9-3   351 Q6API1_DESPS 351 residues                                            5      0.00         0
+   129   >A4YFA0_METS5/13-   355 A4YFA0_METS5 355 residues                                          115      0.00         0
+1*  ITERATION    1
+                                                                                                                              E       0.20 |+++        |
+      NN     ED                                                                                                          M    L       0.00 |+          |
+  MM DKCEDS RKKNKP   DNDDQDDDDDDDDDQQDDDDDDDQDDADDDNDDDDDDDDDDDDDDDNDDDDDDDDDEDDDDDNNDDDSDDDDDDDDDDDNQDDDNDDQNNDVDDDDDNVDTNDDMQG D    0.00 |+          |
+  TTMQEKRRRMRNKASQ   PKRKEKKPPPAPAPPPGPKKKKKPPPPPPGGRKGGGGRGKGKGGGGSPPRPPPPPPPAPAKPGGKSAAPPPPPDPPPPLPARAAPPPRKGPKPPPPASRRNSTRGMK P    0.00 |+          |
+ MLTYAILAEEPESVRKE   AEATQDEKQEGKDQEKKLNENEEDAKEKEKDDGDEAGAEESTKQGADDADVKQDVAEAAGEEDAQKQDAQAEARVAALADAEDGEEAQDDDEAAVVKQQKSEEEEKS T    0.00 |+          |
+ QTPSSLIVLVGFIILIL   RLLLAVIATTTVTTVTTITSLLRVHAQLKLYLLVLIVLVILIILLTLKKKRRKKLLKKATRATYTVALRLLLLIALLIALAKLRLRLQIYLVALLLLSLISLLIEPLSL    0.00 |+          |
+ AAAVMIIAAAKVSDATVMMMAIIIAIIIIIIIVIIILMLIIIIVAAVAVAAAAAAAAAAAAAAAAAAAAAAVLAAAAAAAVAAAIIVAAAAAAAAAAAAVVAAAVVAVVAVAICCCAGAIIASVKVSPA   -0.00 |+          |
+ KQREEKEQQMNRKRGGQKKKRKKKKLQKAHRRLRRQKKLLLLLKRRMKMQAARQRRQEQLKQRRGRRRQRGKQQRAERRRLKSQLKAQRRGRRKRRRLQRQEKRKRRQLKRARRRKKRDSLKRNKIKEK   -0.00 |+          |
+ VEASQN RKKPKD AMKNNNAKKKAAKANNASSHAAAAAASSAAAAQSAKETRTGDKRSGDGSGRQQSATVTAGKAAAAAKAAAAAHKAKRRRKTRQRRLAQKQHAERKTHGAGGVPTFGKSKKRRTAA    0.00 |+          |
+ WWWLKIVIILILILLLTLMLLSASLYFLLLLLLLLLYLLLLLLIELLLLLVLLLLIIIILVLILLLILLLLLLLLLLLLLLLLILYYYLLLLLVLLLLLLWYYTYLLLALLYALLLLLFISILLTLALL   -0.00 |+          |
+ LLLLLLMILVAVIVRIVTTSAIIIAAAAAAAAAAAAAANKNSKALLIVIAAAAAGAASAAAAAAAAALAVLLMVIIRSVSSLAISKRVLLLLFVVLLALLVALAIALLKVLLSLLLVLTVFTMAASVLR    0.10 |++         |
+ EKKRLNDEQEERTEGQEKKREQDLGKKKRKAKEQAQRKAKEKEETAERALRKEAEAEAQKRRAARARRRRKQGRTRRARAENRNNKQEDDDDEDDDDDDEERASSTADDRDKADDNAEASREGQRESEL    0.10 |++         |
+ KKRDAEKKGKKRKLYYADEEATKGQRKADEREQLQKIKLLVLLKRAHRHARATAARRRAAQAATARRAEEEHEEHEEKSRKRLEELAEREQDQERAEEEQAAEAEAGAKLAEARRKEYEKEQREEKDER   -0.00 |+          |
+ LIIILIIIIIIIIIIIIILLLIIIIIIIIIIIIIIIIIIIIIIIIILLLIIIIIIILIIIIIIIIIIIIIIIIILIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIILLIVIILLLLIIIIIVIIIILI    0.80 |+++++++++  |
+ QHHKTQKKKRHHTHAKRILVRQNKEKANQANAKATHAN     AAARQNRHRARRRRQKRTDAATAHEREERNAQGERTAKERIKDAKRRHHRRNIHKRDARHRHAAHIQARAHRNRNAKMHAKIREHE    0.00 |+          |
+ QEDNRKAERE KGRRKGKDSHKKKKNQQVLSTAQEQET     RRREKQQAKAARTQAAAAAARAAVGDTAQRQQTKDEEKKAAKERKQRASRRRATRRNQTSSKQAAKKAEERANRKRAEKALEEKRE    0.00 |+          |
+ LLLTLSIEEE EKVKYLKKRNLLLLLNETHAQIQLTDK     RLRRLREEEEEEEEEEELEADEEALLLLRLLLILLLLLDETLDESVKVTITATTRVARETRIATEKLLLAEELSRLIILLINLKVL    0.00 |+          |
+ PPPSQPDVAA AAAFAAIIIMSAAAAAAAAAAAAAAAAREKIAAAAAMAAAAAAAAVAAAAVASAAVVVATATSMCSCACSAVAALIVATTVTVAAAASVVAVVTVVIVTAAILTLVSAKVAAAYSLVA    0.00 |+          |
+ RLLLVVTKEKEEHPEKKNNQDEEDAQSQKAQNPAKQEKKQKQSTAEAEPDDDHDDRRQDDDSDDCDEAADAALQQAQEAEEAKDSKTTRTTTTTTTTTTSTTTTTRSSEKAATDDDTTDLQPDADKLSK    0.00 |+          |
+      KSGRTLTVIEEEEEEAKKEGSLKLKNLQKDTKQNEERKEAQLKM                  DGQQQIKKTQ   KQ  KD                      K R         KIEQGEEKK    0.00 |+          |
+        MILTLLAILAIIIILILRLLLVHLLLTLLLLILSSILLILLL                  IMIILLLLLL   IL  LY                      L V          VVMAFR I    0.00 |+          |
+             KIRKVKASGDDNE                   GGPPS                  EGEMPEGPG                                             SAA EI      0.00 |+          |
+             KRAKKQTRREKK                       H                          Q                                              KE   K      0.00 |+          |
+             KRRRKPPPE  D                    AAYFY                  IRTAFRYFR                                             E           0.00 |+          |
+             GVEDK                           TSTTT                  CATGSTTSA                                                         0.00 |+          |
+             YGGGN                           HRAAKPPPPPPSPPPPPSPPSPPRRKRAPTKK P P  PP                     P               IR   G      0.00 |+          |
+ PDTSS       DGR K        SPDKESDPTPSEPKKKKTQDEEEQGEAGAGDNGGRAQAAGKERRTDEEEKDDGGGG GQTD                   G  G G         SGL   S      0.00 |+          |
+ ARRKE   GDDD  DDE        ERHQGEGEEESRYENKKKQKKRNRRRRRRRRRTSKRRRRRRRRRRRRHHRDKRDRRGRREKKQHRRRRRRRRRRRRRRRKKRRKKRAQRARKKRSDRG   E Q    0.00 |+          |
+ GPPPP  ERGRR  YY                                                                                                       GLER   V E    0.00 |+          |
+ R    KPEEEDDTTRVV        PKPPNPKPQPPPPSPPPSPPPPPPRRHDSHESRTPSALNEQRPPPPSPPPPHQEATENHKTPPDHPPHPTRPRSPPPEPPRPSPKRPPPPPPPPKTKPPASSPN    0.00 |+          |
+ VVVFIFLVVILVIIIYIIVVVVLVILVIIILILILLILIIFLILVVLLLYYYYYYYYYYYYYYYYYYLLLVLLLLVIYFYVIYYLIWWWWWWWWWWWWWWWWWWWYWWIIIYWLLLLALVIIALVVLII    0.40 |+++++      |
+ ARGRKNKRKRTTKKKKKKKKSKKKKYKNNYYNKNRRNKNNNNNYSHRYRHRYRHANSHHRHRHARRRQQQVQKKYTKKKANSRQVNTTTTAAAVTATTTTTSNVNRVTKNSTTRRRRRRKNKVKRKRRM    0.10 |++         |
+ IIIIVVIFLIFIIIIVIIIIVIIIIIIIIIIIVIVIIVIIIIIIIIILILFLLFFFFFIFFFFLILLIILIIIILVIFFFILLFIILIIIILIIMILILILIVLIFILLILVIFFFIFLIIIFIIIILI    0.60 |+++++++    |
+ MMLLMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMVMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMIMMMMMM    0.70 |++++++++   |
+ NNNNNEEHHHHHNDDDHHHHHHHHHEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEENEHEHHVH    0.10 |++         |
+ VVVVLVVVVVVVFFFFVVVVVVVVVVVVVVVVVVVVVVIIIIIVIIVVVFFFFFFFFFFFFFFFFFFVVVVVVVVVVVVVFIFFVVIIIIVVVVVVVIVIVVVIIFIVFIIVVVVVVFVVVFVIVLVVV    0.60 |+++++++    |
+ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC    1.00 |+++++++++++ 
+ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG    1.00 |+++++++++++ 
+ GGGGGTSTTTTSTTTTTSSSSSSSTGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGSTTGTTTSGTTTSTGTTTTS    0.60 |+++++++    |
+ HHHHFHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHQQQQQQQQQQQQQQQQQQQHHQHHHHQHHHHHHHHHHHHHHHH    0.40 |+++++      |
+ EEEEATTEEEEEEEEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTETETEENE    0.30 |++++       |
+ RRRRRQEDDDARWHWWHHHHQHHHYHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHMHVHVVVMVVMMWVNHDRRW   -0.00 |+          |
+ SSTAFAVTTTATTSTTTTATATTTTTTTTTTTTTTTSTSSSSSTTSATAATAAAAAAAAAAAAAAAASTSSASSTASTTTATAASTSSSSSTSSSSTSSASTSTSAAAAAAAAAASSAASAVAAETTAT    0.10 |++         |
+ IILIWLIVVVIIIIIIVIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIILIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIILIIIIIIILIIILILIIIIIIIIIIIIIIILTIIIIIII    0.50 |++++++     |
+ TTATASGTTTAVTVVVTMMMACCCTMMMMMMMMMMMMMMMMMMMFFFFYFFFFSSFSSSSSSSSSFAFFFFFFFFFFYYYMYFHMMVVLIIIIVIIVMLVVVVMVGILMFGAVFFFFFFFFTSVFTALT    0.10 |++         |
+ MMAREKRRRRREHWHHHYEQRKKKKRKKKKKKKKKKKKKKKKKKRRKKRRRRRRRRRRRRRRRRRRRKRRRRKKKRKKRKKRRRKKKKRRRRRKRRRRRRRKKRKRRRRRRKRQQKRRKKEHRRRKKRH    0.10 |++         |
+ AAAASLLSSHHHYNFFNNNHFYYYSYYYYYYYYYYYFYYYFFFYHYFFFYYYYYYYYYYYYYYYYYYYYYYFYYFYYHHHYYFYYYYYNNHHNYNNQNHHYYNYNYHHYYFNWSSSNYANHYLYLYYYY    0.10 |++         |
+ GGGGDGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGAAGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGAGGGGGGAGGASGGGGGGGGGGAGNGGG    0.40 |+++++      |
+ LILFWFLIIIILIILLLIIVLIIIILLLLLLLLLLLLLLLILLLLLLLIVIVVVVIVVLLLLLLLILLILILIILLILILILVILILIIIIIIIIIIIILLIILLLILIIILLILIIIIIILLIILLII    0.50 |++++++     |
+ RRRRHRRRRRRRRRRRRRRRRRRRRQLLLNLNKLPNPMCPPPPKDDDDDQPQQSIPSTEEEEEERPTEQEEDEQDEEEEEDENPLPDDDDDDDDDDDDADDDMPLADDDKRRHRRTRRRKRRRRRRRRR    0.00 |+          |
+ GSATQQDSSSSSSSSSSSSSADDDSHQQDQGQQQQQQQDSEQDQRKQRQDDDHDDDEDDDDDDDDDASQGKKEERGEDHDQNDSDQASQQQQQYQQNQAQTEDDDGQQKDRDEPPTSQQSSASQKSSES   -0.00 |+          |
+ VALLSLILLLLLLLLVLMLLVVVVLLLLLLLLLLLQLLLILLLLLLLLLLLLLLLLLLLMLLLLLLLLLMMLLAILIYLHLLLLLLLLLLLLLLLLLLELLILLLLLLLILLLLLLILLLLLLFLLVEL   -0.00 |+          |
+ LLMFLVLLLLLLMMMLMLLLLLLLLLMLLLILLLLLMLLLVVLLIVLLLVLMMLLLLLLLLLLLLLLLLLLLLLLLLLLLLLMLMLLLLLLLLLLLLLLLLLLLLLLILLLLLLLLLLLLLMLLLLLLL    0.60 |+++++++    |
+ PPPQSNYPPPPPPPPEPPPPPPPPPPPPPPPPPPPPPPPPGGPPDHPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPKPPPPNPPPPPPPPETPGQPPRPPPPPPDPPPPPPPPPPPPPAPPPPPP   -0.00 |+          |
+                M                                                                                                                    -0.00 |+          |
+                A                                                                                                                     0.20 |+++        |
+                G                                                                                                                     0.20 |+++        |
+                V                                                                                                                     0.20 |+++        |
+ DESHRPPKEEKEDEEDPSPEPDENAKKKDDDDEDAEEDKKEEKGDEEPEQADPAKDADAKAAGGAAPEDSPPDNEDAEEPGDENNKKPPDAEPPGDADGSEDKPKEAPGSEAPEEKEPEDQEGAPEQDE   -0.00 |+          |
+ YCGNVNKNNNNNNGGNEEEEGNNNNNENNNNNNNSNNNEENHENGGNSNNNNNNNNNNNNNNNNSNCAESEQSNSLNNSAVNNNHKNENTGQEESQGTTSGKETNAEQYNNQEGQGGHQSNTRHQNYFN   -0.00 |+          |
+ VVVIVIVVVVLVIVVVVVVVLIIIVIVIIIVIIIIIIIVIIIILIVVIIVVVLVVVVVVVVVVVIVVIVIIIIIIIIIIVVIVVLILIVIVVIIVVLIVIVIVLIVILVIIILVVIMIVIIVVIVIIIV    0.70 |++++++++   |
+ RENHHNNKKKKREEEEEQEEETTTKEEREEKDDHEENENNNNNQEEEEEEKTSKRKRRRRRRRRRREEEEEEEEEEETESRDREENTTQEEEEEEEREERTTQERTEEERRRERVDEEEENEEKESEEE   -0.00 |+          |
+ LLLLILLIVVILLLLLLIIVLVVVVFFFFFFFFFFFFFFFFFFFFFFFFYMFFMMMMMMMMMMMFLLFFLFFLLFFLLLLFLFMFFLLLLMLLLFFMLLLLLMFMLLLFLLLLHHHLMLLLLLVLLVLV    0.30 |++++       |
+ VIIIMLVMMVVVIVVVIVIVIVVIVIVIIVIIIIVIIIIIIIVVVIIIIVIVIIVIVIIIIIVVIIIVVVAIIIIVIVVVIVIIVIIIVVIIIVVIIVIVLLIVIIVIIIIVVLVLLLVIIIRIILIVR    0.20 |+++        |
+ PAPPPSSSSSMCAAAAAAAAMPPPMHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHSSSHSSSSSSSSPSASSSAA    0.10 |++         |
+ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG    1.00 |+++++++++++ 
+ PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP    1.00 |+++++++++++ 
+ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG    1.00 |+++++++++++ 
+ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC    1.00 |+++++++++++ 
+ PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPSP    0.60 |+++++++    |
+ VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV    1.00 |+++++++++++ 
+ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC    1.00 |+++++++++++ 
+ IVVIVVVIIIIVIIVVVVVCVVVVVVVIIVVIVVIIIIVVVVVIVVVVVVVVVVVVVVVVVVVVVVVVVVVVVIVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVIVVI    0.70 |++++++++   |
+ CCCCCTTTTTTTTTTTTVVVTTTTTMMMMMMMMMMMMMMMMMMMLLLLLLLLLLLLLLLLLLLLLMLLLLLLMMLLMIIIMILLMMTTTTTTTTTTTTTTTTTTTLTTATTTTTTTTTTTTTTCTTTMT    0.50 |++++++     |
+ PPPPPPDPPPPTPPPPPPPPDTTTPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPDPPPPPPPPASSSDPHHHSSPPGPDPPPPPP   -0.00 |+          |
+ EEEEEEEVAVQTGASSASSAGQQQQKKKKKKKKKKKKKRRQKRKQRMMMVMVMIVIIVVAIAIIIIVVMMMMRRMMKMMMMMAIRKMILLLLLLLLLLQLGLLLVAAAMQISGEEDATNDESHVVDETA   -0.00 |+          |
+ GEEEAGSEEEGGHYWYAHRRPKKKSNEEEEEEEEEEEESVSTEEAAGGGRARAGGPGGGGGSGGGGGGGGGGGGGGGGGGQGGAVDEEEEEEEDEEEEAESENESGSEDGHSESSSAADIESQEGERGT    0.00 |+          |
+ DDDDEYYDDDEEYYYYAEEEEEEEERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLLTSIVIMVTLVDMVLLVLRLTRYDDVEEEHDYYIDESFDDHD   -0.00 |+          |
+ IVVIIIIIIIILVVILVIIIVIIIIIIIIIIIIIIIIIIIIIIIIIIIILILIVILIIIIIIIIILIVVVVILLIVLVVVIVIILIIIIIIIIIIIIIIIIIIIIIIIIIVILVIIMLLIMIIIIIIVI    0.70 |++++++++   |
+ HYFARDDVAVDADDEEDDDDDDDDDNNDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDEEDDDDDDDDDDDDDDNDDDDDDDDAAEDDDDVEDDDQDDD   -0.00 |+          |
+ AQEYAAAKAAAALIREAEEEEKTKAQQHQHQHHHQHHQITEEVQEESVNDADHQMALLAMAMMMNMSDDDDAADVDDDDDLDSKESQSRRRKKRRRKQFRQKKAKAQRLTRQAAALAKTKENMEEMIAD   -0.00 |+          |
+ AAAAAAAMMMAALAAALCCCAAAACAAAAAAAAAAAAAAAAAAACSCCCAAAAAAAAAAAAAAAAAAGCCCCAACCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFAYYFFVAAAVMAAVAFA    0.30 |++++       |
+ IIIIMILMMQLIIIIIIVLIVMIIVYYYAAIAAAIIYILIICLIIIVILVIVIIIIIVIIIIILIIILVVVCIIIVIIMMILIIYYLLLLLLLHLLLHCHICIIILILILLLRLLLIIILFIVIVMIVV    0.10 |++         |
+ RQRHHEKEELEKDKEKDAEEAYYYEEEIAIAAATEAVDKKKKKAEQEEEEEEARKEKQWRARRQDEEVAAEEAAEAAHWHEWRAEEWKALEEAAEAASQAAEYEEAAQEEYYDQERSAAAEKDTWHAKK   -0.00 |+          |
+ LLLLLLLIIIFALFLLLLLLLLLLLIILLLLLLLLLLLLLLLLLIIIIILLLLLLLLLLLLLLLILLLLILILLIIIILILLLLLLLLIIIIIIIIIILIIILILLLLLLLLLLLFILYLLLLLLLLVL    0.40 |+++++      |
+ GAAAALLMMMAASASASAVAAAAAAAAAAAAAAAAASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAAAAAAAAAAMAAAASAAAAAAASSALAAAALAAA    0.40 |+++++      |
+ LLLIVKNKRREEMLLFLEDRMEDEEMLMSSKSCSRQQMSSSASRSRSESLVETLMVLLKEMEQTRRLEEEMADEREQGERKSESSLKSAASSARAAASKAQTEAKAGAKLDAVEEAERRKEMRLLEKRM   -0.00 |+          |
+ ERSNRNRIKKKDEESESQRQQQNKQQQQQQMMQQEMQLQMMMILRRHKHKRRQEETEEQRRRRRRREHRRKHIKRRNRQQRQEMMQQLRRRRLRRRRMRMDRGRQRRLMSRQERRKRLQKKELLKKSQ     0.00 |+          |
+        AAA                                                                                                                           0.20 |+++        |
+        RKR                                                                                                                           0.20 |+++        |
+        EEE                                                                                                                           0.20 |+++        |
+        EEE                                                                                                                           0.20 |+++        |
+        GGG                                                                                                                           0.20 |+++        |
+ DTEEESEEEE               KEEEPDPPAPPPPKKSPPPPPPPPTHHHQRHRRPPPPPPPPHPPPPPPPPPPPPDKPEQKKPPPKPPPPDPPPPPPPKR PPPPRPPGGDPDTDEH PPKE PD    0.00 |+          |
+ GDRNDNNEEEGGGGGGGGGGGGGGGDGDNDDNNDNNDNDDDGNNGGEHENQNDGAEGGGDEEENDGRSEGEENNEENGGGDNRQDDENNEGEEDDEEGDGQDNEGEEENEHHGDKNGGDNNGGKNNGDG    0.10 |++         |
+ AMVVVVIIIICMYIVVVVVVVYYYKVVVVVVSVTVTVTVTTVTVVVVVTVVVVVVVAVVIIVVVTVVVVVVVVVVVVVVVVVVVSVIITVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVYVVVIAVV    0.10 |++         |
+ LIIVIILIIIIVTRTVRTTTRTVTIIIIIIIIIIIIIIIIIIIVVIIILIVITTTIIITITITTIITIIIIIIIIIILIIIIIIVIIIIIIIIIIIIIMIIIIIVIIIIIVIIIIIRIIITTTTTTTIV    0.30 |++++       |
+ VLLILLILLLIVIVVIVVVIVIIVILLLLLLLLLLLLLFFFFFLLFFFFLLLLLILVVLLLLLLLLLFFFFFFFFFLMFMMLLLILFFLFFFFFFFFFVFIFLMLLFLFIFTLIIIVIIILVLLILVTV    0.50 |++++++     |
+ CVVVASTTTTACLYYYYTTTCATACLVCVVLVVVVLVVCCCCCVATCCCTCCCCCCCCVCCCCCCCCTTTTCTTCAATTTCTCCLVCCTTCCCCCCTATTCCCACCTCTAAAAAAAACATFYGLCAVAT    0.30 |++++       |
+ ATASATTTTTTASTTTAITTTTTTTTTTTTTTTTTTTTATSTVTTTTTTTSTTTTSTTTVTVTCSTTTTTTTTTTTTSTSSTTSSTSSSSSSSSSSSSSTSSSCSSSSTTTTTTTTISTTTTTTTTTTT    0.40 |+++++      |
+ FFFFFFFFFFYFYYYYYFFFYLLLYLLLLLLLLLLLLLLLLLLLFFFFFYYYYYYYYYYYYYYYYYYFFFFFFFFFFFFFYFYYLLFFFFFFFFFFYFFFFYFYFYFYYFFFYFFFFFFFFFFFFFFCY    0.50 |++++++     |
+ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGAAGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGAAGGGGGGGGGGGGGGGGGGGGGGGGGGGGAGGGGGGAGGGGGGGEG    0.30 |++++       |
+ DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD DDDDDDD    0.30 |++++       |
+ MMMMMMLMMMLVSATVVMMMMMMMLMMMMMMMMMMMMMLLMMMMAAAAAMMMLCCMTTMLLLLLTMTAAAAAAGAATMMMLMLMMMMMMMMMMMMMMMMMMMMMMLMMLMMMMLLLLLMLMMMILMMLM    0.40 |+++++      |
+ LLLLLMMYYYLYYYFFYLLLLYYYLIIIIIIIIIIIIILLMLLIVMMMIMLMMLLLMMLMMMMMLLLMMMMLMMMMMMMMLMMLMILLLLLLLLLLLLLLVLLMIFLLLILILMMMFLLLLFLLVAMLS    0.30 |++++       |
+ RRRRSRKKKKRRKRKRKRRRRRRRRKKKRRRRRRRRKRRRRRKRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRKKRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRKQRRRRRKR    0.40 |+++++      |
+ VVVVVVVIIIVVLLLLLVVVLVVVVIVVVVVVVVVVVVIVVVVVVVVVVVVVVVVVVVVVVAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVA    0.60 |+++++++    |
+ PPPPPNKPPPPPPPRPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPKPPPPPPPPPPPPPPPPPPPPPPPPPPKPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPTPPPPPRR    0.30 |++++       |
+ IVVVIGGTTTGTGGAAGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGAAAGAAGGGGGGAAAGGGGGGGGGGGGGGGAGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGSGGGTGAGFGGG    0.30 |++++       |
+ NNNESSTPAPSPTSVLTTSSTSSSTSSSSSSSSSSSSSSSSSSSTRKRKTATSSSSSSSSSSSSSSSSSSSKSSKSSGSSSSGSSSSSNSSTSSSSTSSSDSSSSSSTSTTSQPPPSSSSEVSTTQSST   -0.00 |+          |
+ RVEHYRTRVMNV GNQKEERAKEEKNQQKKKKKMKKNKEEIAYKQSQKNKHKEDDRDGKQNQHRGGRKRKRQQQLRKNAHKTSGYK              R    ARGYKGQRGGNQRSSGKRNEGSKK    0.00 |+          |
+ GPPEGENGGGVGRRPR         GGGGGGGGGGTGGEITTESGQGGGQRQRGGKGGRGGGSGGRQKKKLGKKGKTGGGRGRQGGGKSSGGREHGGVQHQHKHSRAPRTGKRGGRGQSGRHSSMKDEM    0.00 |+          |
+ RKKMA       LPVV                                 KTRKLLRLMLASQANQVM             K DK  AKKKRRKGQMTSGQQTKTKRESK R TRKK     Y           0.00 |+          |
+ AKGGA       RFDR                                                                                          N     G        K           0.00 |+          |
+ EEQGG       GGGG                                                                                          G              K           0.00 |+          |
+ VVPCY       IDVA                                                                                          D              D           0.00 |+          |
+              K                                                                                            T              E          -0.00 |+          |
+                                                                                                           I                          0.10 |++         |
+                                                                                                           P                          0.10 |++         |
+                                                                                                           I                          0.10 |++         |
+                                                                                                           F                          0.10 |++         |
+                                                                                                           R                          0.20 |+++        |
+                                                                                                           T                          0.20 |+++        |
+                                                                                                           G                          0.20 |+++        |
+                                                                                                           K                          0.30 |++++       |
+                                                                                                           G                          0.20 |+++        |
+                                                                                                           G                          0.20 |+++        |
+                                                                                                           E                          0.20 |+++        |
+                                                                                                           R                          0.20 |+++        |
+                                                                                                           D                          0.30 |++++       |
+                                                                                                           T                          0.20 |+++        |
+                                                                                                           S                          0.20 |+++        |
+                                                                                                           A                          0.20 |+++        |
+                                                                                                           M                         -0.00 |+          |
+                                                                                                           K                          0.30 |++++       |
+                                                                                                           N                          0.10 |++         |
+                                                                                                           R                          0.20 |+++        |
+                                                                                                           Y                          0.20 |+++        |
+                                                                                                           G                          0.20 |+++        |
+              G                                                                                            V                          0.10 |++         |
+              R                                                                                            P                          0.00 |+          |
+              P                                                                                            V              V          -0.00 |+          |
+ RRRSA       RRSRGKRGRKKKS                                                                                 F              G           0.00 |+          |
+ SSSSTNSSSSSSSSSSSSSSSSSSSSSSSSSSSSTSSTSSSSSTSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSTNSSSSSSSDDDDDDDDDDDDSDSDSDSSSHSSSSDNTSSSSTTSSSSSSSS    0.20 |+++        |
+ LLLLLLLFFFLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLFLFLLLLLLLLLLLLLLLLLLLFLLLLLMLLLLLLLLLLLLLLLLLLLLLLL    0.70 |++++++++   |
+ EEEIDIMAAAESFEEAAAAAAMMMYAQQAAAAAAAAQALLQQIALLLLLIQILMLLVMLLLLLLLLYLLMLLLLLLLFIFLLHLIQLLFFFFFFFFLFLFQFLLLIQLLMQQLKKKALMQSAEEAFLAE   -0.00 |+          |
+ QQQDGKDDDDSSDEEEVDEDDQEQDDSDSEQQQQQKDQNDKKDQVQQEDRKRKKKKRRKKKLRRKKKQKQGQQQDQQDEDNDKTKKSTMMRQRQSMATDSQTQRQSQEDKRMALSHNEQEIAREGTNDE   -0.00 |+          |
+ AAAAAQELLLSCAAAAAAAAALKLTAAAFFAHYFQQACLLLLLCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASAAVAAAAAIIAVVVVVVVLVAVAVAAAAAAIRLLAAAAAVEMLAEAALAVA   -0.00 |+          |
+ HKKKRRKKKK  RRRKKKKRQQQQVRRRRRRRRRRRRRRRRRRRKRKKRKKKKKRKKKKKKKKKRRRKKKKRKKKKKNKNRRKKRRKKRRKRKRKRRRRRRKKRKRRRRKRRRQQQSRKRKRRRRRKLR    0.00 |+          |
+ AAANQEPSSS  IAAAAAAAASSS AASAAAAAAAAAAAAAGAAAAAAAASAAAASAAAAAAAAAAAAAAAEAAGAAAAAAAAAESAASSSSSAAAASTSAAAAAAAASAAGAAAASAAVAAAVEASNA    0.00 |+          |
+                                                       H                                                                              0.40 |+++++      |
+                                                       L                                                                              0.10 |++         |
+                                                       D                                                                              0.30 |++++       |
+                                                       K                                                                              0.30 |++++       |
+ SAAQDKNQEE  HLAMREEDDEEE KLKKKSSKKKLKRRKKEKEKARRHEQDDKSERHERALAAEEADDDERQQQDTEREENRCKEQSEETEEARRRRRRARGAEEASEEAEAQAEREQNQLGNKEEEM    0.00 |+          |
+ GGGGGGHGGGGDGGGGGGGGGGGG GGGGGGGGGGGGGGGGGGGGGGGGGGGGGRGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGRGGGGGGGGG    0.00 |+          |
+ AAAAAKNYFFAGGGGAGAGAGACAGARACCACCCSSAGAAHHAGAAAAAAAAAGAAGAAAAAAAAAAAAAAAAAAAATATAAAALAGGAGAGGGGGSGGAAGAAGAAAHAAAAAAAAAAKFAAGAYAVG    0.10 |++         |
+ DDDDDDNDDDDDDDRDDDDDKDDDDDDDDDDDDDDDDDDDDDDNDDDDDDDDDDDDDDDDDHDDDADDDDDDDDDDDNDDDDDDDDDDDDDDDSDDDDQDQDDDDDEDDDDDDRRRKDDNSDDSKDDHD    0.10 |++         |
+                                                                                                                                R     0.20 |+++        |
+ IVIIVIIVVVVVTVVVVVVVVVVVIVVVIIVIIIIIVVVVIIIIVIVVIIVVIIIVIIVIIIIIVVVVVVVVIIIVIIVIVVIVAVVVVVVVVVVVVVVVVVVVLIVVVIVIVIIIVVIIVVVVIIVVV    0.50 |++++++     |
+ RRRRVKKRRRRRRVRRKRRREKRKRRRRRRRRRRRRRRRRRRRERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRKRQRRRRRRRRKRRREESDRRTKRRKRRRER    0.10 |++         |
+ PPPPAVVIVIIVIVLLVIVIVIIIIFFFPPPPPPPAFPAASAAAIMIIVMMMMMMMMMMMMMMMMMVMMMMVMMIMMMFMMFMMFFIIVIVVVIIVVIIFIIIIIMMVSIIIAVVIIIITVIIVIIMIV    0.20 |+++        |
+ VIIIVLIVVVVVVVVIVVVVVVVVVLVVILLIIIVLVILLLLLIVVVVVVLIIVVVVVVVVVVVVLVVVVVVVVVVVVVVVVIVLVVVVLVVVVVVVVVVVVLVLVVVLVVVVVVIVVVVAVFVVVVII    0.50 |++++++     |
+ AAASAYYYYYQQYYVHYYYYYYYYQYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYFFYYYYYYYYYFYYYYYTYTYYSYAYYYYYYYYYYYYYYSY    0.10 |++         |
+ SSSSNSSSSGGSSSSTGGGGSGSGSSSSDDDDDDDSSDTSTSTDSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSASSSSSSSSSSSSSSSSSSSSG    0.40 |+++++      |
+ PPPPPPPIIIVVFFLFFIIVIIIIIPPPPPPPPPPPPPPPPPPPPPPPPTPTTSACAPTTTTTTAPSPPPPPPPPPPPPPCPAAPPPPPPPPPPPPPPPPPPPPPPPPCPTTPSPPPTPPPFPPPIIPV    0.20 |+++        |
+ MRMQHLLYYFHRLMVLLGNGSGSGAFLLLMLLLLLLMMLLLLLMLLMLLQAAQAAMALLILLLLLIALIMLLLLLLLLLLLLTNMMLLLLLLLMLLLLLLLMMTLLLLLMLLLFVMMMLLRVLLAFDRQ   -0.00 |+          |
+ EEEEEDEDDDKKDDDHDNKNQDEDQEEDDDDDDDDDEDEEDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDDDDDDDDDDQDDDEDDDDDDDDEDEDNEDEQEDDDDDDDDDDDDENDDDDDDQD    0.30 |++++       |
+ AAAAASASSTAAAAAAAAAAAAAAAVVVTAATCTAACTIVACVVAAAAAAAAVAAAAAAAAAAAAAAAAAAAASAASSASTAVTACCSAAAAACAAAAAAAAAAAAAVAASAAAAIAASAAAAAASAAA    0.40 |+++++      |
+ VVAVVILYYYVEIVVAIVIVVVVVVLLMLLLLLLLLILLLLIILLLLLLLLLLVLLLLIILIILLLLLLLLLLLLLLILLLLLLLLLLLLLLVLTVVLVLVLVLVVVLILLLLLLLLLLVIIVIELVLV    0.10 |++         |
+ ARASEAKKKREELKRIREEEEKKKDSKKKTAQTKRTKLQEKKDKAAKTKRRKRTARQKKRRRAARKAGAAAMPKNEQKKKKKAKEKAKQQTRKNRRRQEQAEQQNTEADTRDRKSKEEAKEEAKKKAEK   -0.00 |+          |
+ LIIILLIIIIIIIHDDDLIILLMFIIIIIIIIIIIIIIIIIIIILLLLLIIIILLIIILIILILILFILLLLIIILILIIIVIIIIIIIIIILIVLLFLIILILIILLILLLLLLIIIIIFDFFYLLLM    0.10 |++         |
+ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA    0.70 |++++++++   |
+ QQKLLEKKLKKERKSKKKERQKKKRKKKRKRITQKQQKKKKQLRRRQRRRLRRQQQRRQEDEQERQRKRRRRKKRRRRRRKKQQKDRQRRRRQQAEERRRAKSRARRRVEERQAAIKRRYEKEQLEGYR   -0.00 |+          |
+ QQDEREEEKE  RRRRQEKKAKKEQEEEDEDDEDEEEEQQQQKNKKDNDEEDEKRDQLADAQAAADAANKAQQEQRNQDAEDAEEEEDDDRQQQDEQDRDKAERKDQSKNEKADADNQANKKADESKVR    0.00 |+          |
+ NNNEHNNNENNSNDHHYIELHQENTNNNNNNNNNNNNNNNNNNNLYNNNNNNNNENNNNNETEEHNRNHHNHNNNNHNNNNNNNNNNNNNNNHNNNHNQNNNNNNNQHNNNNHNHNNNHNNSNSHSKEE   -0.00 |+          |
+ PAPPPKKPKPTEP       P RPPPPPPPPPPPPPPPLSPEPPPPPPPPPPPPPPPPPPPPPPPPSPPPPPPPPPPPPPPPPPPKPPPPPPPPPPPPPPPPPPLPPPQPPPPPPPPPPPP PPP PEP    0.00 |+          |
+ QKTRTDSDDDDDSGGNGDDDEDDDDLHTDDDDDDEDDTDNDDEDDETDQQQDDDQGQDDGDGESDDDGDDDQDDNDDEEDDTENHDNDSSDDDEDDDQERDTDADQHEDLEDEGQKDADGNGEQEDDDN   -0.00 |+          |
+ RRRKRKLKKKKRRKGKKNNREEKKRKQKKKKKKKKKKKKKKKKKRRRKRRRRRKRRRRRRRRRRRRRKRRRRKKKRKQRRKKRKKKRKKKRRRKKRRKKHRKKRKRRRKKKKRESDEKKQIKRQERLKK   -0.00 |+          |
+ QQSVEEELLTEDKEEPEDDEQKKKERKKTQTTETTQTSKNNKNQEDKQKQQEQQEEEEQEEEQDEDQEEEEQEEKEEHHQKMQDKIEEEEQEQQQQQEQEQQEEEAQQNKEEEKTILKKEEPETQPKID    0.00 |+          |
+ VVIIVIVVVVVVHSSSAVVVVVFVVIVVVVVVVVVVVVIIVVIVVVVVVVVVVVVVVVVVVVVVVVVVVVVLVIVVIVVVVVVIVVVVVVVVVVVVVVVVVVVIIVVVVVVVVVVVVVVVVSVFVVVVF    0.10 |++         |
+ VVVVVVIVVVVLVVVLVVVVVVVVVVVIVIVIVIVVIIIIIIIVVVVVVVVVVVVVVVVVVVVVVVVVIVVVIIVVVVVVIVVVIVVIVVVVVVVVVVVVVVVVVVVVIVVVVVVIVIIIVVVVVVVVL    0.80 |+++++++++  |
+ FFFFFFFHHHFYFFFFFFFFFFFFFFFFFFFFFFFFFYFFFFFYFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFYFFFFFFFFFFFFFFFFFFFFFFFFFFFMFFLFFFFFFFFFHFYF    0.40 |+++++      |
+ FFFFFLLFFFILFLLLFMMMLVVVMFFFFFFFFFFFFFFFFFFFFFFFFFFFFFLFFFFFFFFFFFFFFFFFFFFFFMFMFFFFFFFFLFFFFFFFFLFLLFFFFFFLFLMLLLLPLVLLFFLFLFFPF    0.40 |+++++      |
+ AAVAAGASSSSAAAGGGAAAAAAAAAAAAAAAAAAAAAAAAAAAAGGSAAAAAAAAAAAAAAAAAASAGGGAGGSGAAAAAAAAAAGAGAGGAAGGAAAAAAAAAAAAASGGAGGGGGAAGGGSSAGAA    0.50 |++++++     |
+ AAAVSVVPPPVVVVIIVAAASIIIVIIIIIIIIIIIIIIIIIIIILLLLIIIIIIIIIIIIIIIIIILLLLLLLLLLIVIIVIIIIVVVVIIIIVVVVVVVVVIVIVVIVIVVIIIVIVIAIIVVIIVV    0.30 |++++       |
+ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG    1.00 |+++++++++++ 
+ FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFM    0.80 |+++++++++  |
+ EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEED    0.80 |+++++++++  |
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTAT    0.70 |++++++++   |
+ TTTTVTTTTTTTTTVVTTTTTTTTTTTTSSSSSSSTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT    0.50 |++++++     |
+ MTLMSTATTTAAMAAAVAAAAAAAATTTTTTSTTTTTTTTTTTTMTMMMTTTTTTTTTTTTTTTTTTIMMMMAAMMAAATTATITTATAAAAAAAAAAAAAAAAAAAATTAVAATATAAIATAATMVAA    0.40 |+++++      |
+ AAAAAPPAAAPPPPPPVPPPVPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPAPPPPP    0.50 |++++++     |
+ PPPPPILPPPTTSAGGTTTTATTTTMMMMMMMMMMMMMMMMMMMASTSAPPPPPPPPPPPTPPPPPPSSSSVSSSSSSSSQSPPMMAAAAAPAAAAAAAGAAAPSAGAPITTATATTTTAASAGASASA    0.30 |++++       |
+ VVVILIITAAVTTVYYVTTTTTTTTSSTTTTTTTTTTTSSSSSTTTTATTTTTTTTTTTTTTTTTTTTTTTTTATTTTTTTTTTTTTTNNNNNNNNNNTNTNNNNSNTTTVVSVVIIITILYVIETNIT    0.10 |++         |
+ AAAAAAAAAAAAAAASAAAAAAGAAAAAAAAAAAATAAAAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAGAAACAAAA    0.60 |+++++++    |
+ AAAAALLGGGAAVAREGNASAAASAAAAIVVVVAAAVVLLVNVVLLIVLVAVVVLLLLVVLVLLVLVMMLLIFLILFMVLVVAFSAMMMMMMMMMMMMLMLMLMLAMLVISVAGAAAAALAVAGLIAEF   -0.00 |+          |
+ MMLTQASMIMMVPPAAPEEEVEEEVLLLLLLLLLLVLLLLLLILTATTTAVAAAVVAIAMAMAAAVATTTTTTTTTTTTTLTVVVLTAAATTAAAAAAAAAASAAAALLTASATTTTSASTLSLSAATE    0.10 |++         |
+ LLILFVILLLLLLLVIILIIALLLLILILILIVLLILVLLIVIVLILLLILIVILIIVIILIIVVILVVVILIILVILLVILLILMLVVVVVVVVVVVVIIVIVVIVALIIIIVIIIVIIIFLIVLLIM    0.50 |++++++     |
+ ALSLLKKEKNLLYVVLYLLLLLILLEEEQEQDEAAQNQEQEQEELQQQQLLRKKKRRRKRKRKRKELLLLLQLLQQLLVRKEKKLEHYHWYHYSVVLHKKAFDWLKLHKLREEQKLMILILEAHKLLLM   -0.00 |+          |
+ QEQNAIQVEVTDNNSRDNASANSSSRRNLQQQLQAQQIKKQKKCQQQQQQKQTHQQDDQLAILLQQTQRQQQQQQRQRGRKAIQNQQQQQQQQRHTRQQQQQKLHAQQKEKQAMTMAQAKEKRSQ RE     0.00 |+          |
+                        L                                                                                                             0.10 |++         |
+                        N                                                                                                             0.10 |++         |
+                        N                                                                                                             0.10 |++         |
+                        Y                                                                                                             0.20 |+++        |
+                        N                                                                                                             0.10 |++         |
+                        N                                                                                                             0.10 |++         |
+                        N                                                                                                             0.10 |++         |
+                        E                                                                                                             0.20 |+++        |
+                        D                                                                                                             0.30 |++++       |
+                        N                                                                                                             0.10 |++         |
+                        I                                                                                                             0.10 |++         |
+      AAVVA           KLK VAAAAAAAAAAVAIVTTSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAAAAASAAAAAAAAAAAAAAA A A  A     0.00 |+          |
+      QKVIA           PKN VMMEEEEEEDLIDIIILIEEAKKKKQERAQQHAQGIEVQRQQEREQREEKAAERVKKKKKIRKAAKRAKKRHAAAQKYRQLAWKKGQARDEKRENY R K  A     0.00 |+          |
+      ENEEQ  KGGGG    ENN QGKHKHKQAAVQQKEQEAQRRQKAAEAAAAKKAAKAHLKDRARAAALAAKRSQAAERAKKKAQRRRRRARRQRQTQQDRKARSEKLKRARKINEQTEA K KQK    0.00 |+          |
+ QGEDGKEEKENDVVSLRNEGS KKNSEQEQARRLALQQEENLLQEERQDELEELLLEALKRKKRDLDEEDEEEEQEEELEEEMLEQQQEECLLLLRLEYEQQLELALSMRKEGQQEQQALKKKGDDDNG    0.00 |+          |
+ PVLLVNKGGEPPVVLVVPPPP DTPKGKKGADQKGKDKDKGGNQGGDNGGKGGGGGGGDQGRRGNGRHGGGGNGQRNGGGGNQNKDGGGGGGGGGGGGQGQGGGGGGGKGGDGGGGKGHGKVGVEELGV    0.00 |+          |
+ PPPPPIILILPPPPPPPPPPP VIPLVILILIIIVLILLILILLILVVVLLLLLLLLVLLLLLLLLQVVIILIVVIILVLIVLIIIIILIVILLLILILLLILLLLLALVLIVLLIILILLPVPLKPVP    0.00 |+          |
+ DDRNDRKEEEKSEEEPKEEEP NDETKSEDPKNDEPPCKNKKKDKGRSDKRSTKKKADKEGETTQKDAREGNTKNTTERTKTNTKKSKTERPKRKDPDDGTSTKTTARKKNRADKNKDDNKKKKSEDGD    0.00 |+          |
+ NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNGNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN    0.60 |+++++++    |
+ LLLFFIIFFFFFLLLLLFFFFFFFFVLILLLLLILLIFIVLLLLFFFFFFFFFFFFFFFFFLFFFFFFFFFFFFFFFFFFLFFFLIFFFFFFFFFFFFFFFFYFFFFLLIYYFFFIFYFFFLFLYFFFL    0.50 |++++++     |
+ TSLKSSSRKKSYLTKKKSSSSYFHSFLLLLLVYLLFLYSFFYFFSSYFYSSSSSSSSSSSSSTSSSSSSSSSSSFSSSSSFATSFLSSSSSSSSSSSFSSSSSSSHSSFFSSSMQAAYFSSLSFSYSCS    0.10 |++         |
+ VILVIFFIIIIVIILLVVVVIIIIIFFYFFFFFFFFFVIFFFFFLVFVLVVVVVVVVVVVIVVVVVVVLVLVIIILMVVIVVVVFFLVEVLLMLMVIVLAVVIMLELLVFVIVVVVVVVIMFLFLVLVF    0.10 |++         |
+ WLLLLLLYYYLLLIMMLLLLLLLLIHHHHHHHHHHHHHFHHHHHFFFVFFFFFLLYLLFFFFFFFFLFFFFFFFVFFFFFVFFFHHLLLLLLLLLLLLILLLLLLLLLVLFLLLLIFMLLFYFLLFLIL    0.30 |++++       |
+ LLVLNILSSSSSSNSSSSSSSNNNVIIIIIIIIIIIICSIIIIICCCCCCCCCCCCCCCCCCCCCCSCCCCCCSCCSCCCSSCCIICVVVVVVVVVVCVSLVAGVVVVSTSSASSPSSSQLSSIMSAPV    0.30 |++++       |
+ ASSSAGGVVVCAAVLLASCCVSCCSNNNNNNNNNNNNNNNNNNNNNQQQNNNNCNNCCNNNNNNNNNNNNNQNNQNNNNNNNNNNNASSSSSSSSSSSSSSSSSSCSSNSVMSFFCTLSSASAAAASSS    0.30 |++++       |
+ GAGGLMLHHHHHYHVVYHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHNHHHHHHHHHHHHHHHHHHHHHHHHHHNHHHHHHHHHHHHHQQHHHHHHHQHQHHQHHHHHHNHHHHHHQHHLVLHNNHQIY    0.10 |++         |
+ RRRRRKKRRRRRRRKKLRRRKRRRRVIVVVVVVVVVVVIIVVVVIIIIIVVVVVVVVVVVVVVVVVVIIIIIVVIIVVVIVVVVIIVVVVVVVVVVVAVVVVVVVVVVVKKKVKKKKKKKKKKRKRKRR    0.20 |+++        |
+ LRLLLRTLLLLLLLLLLLLLYQQQLLTTLLLLLLLLTLTTTTLLTTTTTLLLLLLLLLLLLLLLLLLTTTTSILTTLTTTITQLLTLLMMLRLVLLLLRLRLLRLLLRMMTLRLLLTILITLLYTFQLY    0.10 |++         |
+ TTTTSMMTTTVITTTTTIIIVTTTVVVVVVVVVVVVVVVVIVVVVVLIITTTTTTTTTTTTTTTTTTIIIILVVIIVIIITITTVVVVVVVVVVVVVVVVVVVVVTVVTVVVVVVVMTVMVTIMMFTLT    0.30 |++++       |
+ WWWWWEKPPPPPPPPPAPPPPPPPPPPPPPPPPPPPPPPPPPPMPPIVIPPPPPPPPPPPPPPPPPPIIVIIVVIIIIVVPEPPPPPPPPPPPPPPPPQPAPPPPPPPPPPPAPPPPPPPPAPPPIPPP    0.00 |+          |
+ PPPPPPPPPPPPPPPPPPPPAPPPPPEEPPPPPPPPEPAAAAPPQEPPPPPASSAASASPASPSAAAPPPPPPPPPPPPPAPPIPEPPPPPPPPPPPPPPPPPPPPPPPPQPPPPPAPPPPPPPQPPPA    0.10 |++         |
+ AAAAVIIAAAAAIIAAGAAAAVVVAPPVAAAAAAAAVAPPPPAAPPTTTAAAAAAAAAAAPAAAAAATTTTTAATTAAPAAPAASVAAAAAAASAAAAAAAAAAAAAAAVAVAAAAPVAVAAAVAAATI    0.30 |++++       |
+ VVVVVLLVVVMMMLMMLLILMMMMMVVMIIIIVIIVMIVIIVVMLILLLIIILIIIIIIMIMIIIMMIIIILLLLLLIILILMMVMMMMMMIIMMMMMMMMIMVMMIMIMILMLLLLMLLLALLYVVIQ    0.30 |++++       |
+     DHEEEEEEKRFFKDDREGEDKKRRDDDDDDHAKNEERREERHRRRATGQSVSTTTQQHRQQHRKKKKREERRQKKRQRMDSQEERRAESTTTTRERTEEREAAERRSRARGEIRRQGERKEHNDG    0.00 |+          |
+ SAAATYHAAVWWYYYYRFYFIFFFWAAEAAAAAAAAEAAAMAAAVASSSHGHTSANHHQNNRGRNAHAAAASAAEAAAAAHVHSAVAAAAAAAGAAAASAQAALAAAAYTAAMAAMAAAEFFALAALAS   -0.00 |+          |
+ LMMHMIILLLLLLTSAALLLVLLLLIILVVVVVVVILVIIIIIVLLLLLIIVIIIIILIIIIIIIILIIIILLLLLLIIIILILILLLMIIIIIIVLILILVVIIILIILLLILLLLILLLAVLLLLLV    0.10 |++         |
+ LLLVLLFLILLLLFLLIVIIALLLMLLIMMMMMMMLIMMMLMMLLLLLLVLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLVLLLVLLLLMMMLLLLLVLLLILLLLLLVIALLLLLLLVVVLMKCALM    0.20 |+++        |
+ LLLLSKKKKKSE  DDE        DDDHAAAASASDSSNSSQAQKELLNEGSEEEEADEEEEAEAADDDDQDSRENDEDNNSQEQGSSSESEQSSDSESASEGSAAANEEEAVSAQDTLERSEGESLD    0.00 |+          |
+ EDQEQQDAQQQS  IMA        SDSDDEDDDDDSDDDDDDGDDQQQAPSTSHSSASSSNHCATDSSSSQNNQQNSSSADAADDNSSSSASSSSASSSDADSDEAAADDDGDDDDAADHLDVSNDDS    0.00 |+          |
+ SSSSHPKGGGGG  LV         KPRPPPPPSGKRGEEKEEGPPPEPPAPAPPPPPPPPPPDPPNPPPPPPPEPPPPPP GNPEPPPPPPPPPPPPPPPPEEKEPPGKPPEPPPPGGKNHPH   PN    0.00 |+          |
+ GDEQENN   EE  RK           DKQAKARVDDRNNENNEMHDQDAQDGEEEEAEDDKDSAEDEDDDDDDQDDDDDE EETNNNGESNNGSADEEDDDEGFADEIEEEDEDDEEDDSKED   QV    0.00 |+          |
+ TARPR       EEDEHHNEAGNR   EAATVVSACVAVVTVVS     EQPPV VVVVIVIL VA              I                        T            A  S           0.00 |+          |
+                            H        H            PAR R RRARRRRD RR              R                        A                           0.00 |+          |
+                            I        V                                                                    A                          -0.00 |+          |
+             ERKKEDSSSGEEQ  D        D            GGD Q EQ ENKNG N               E                        T                           0.00 |+          |
+             KHPPA GGKGGGQ  S        S            EEL WGLFALILTV LA              I                        D               K           0.00 |+          |
+             PRTTTEEEET TG  Y        Y            AREDGSGGDGGGGEDGG              G                        V               G           0.00 |+          |
+             ENEDG    S  EHSN        N            PIKGTGVTATRTGGGTT              K                        R            G  L           0.00 |+          |
+ PPPNRHHTTTACAAPYIVTVTLVVACSN        N       MMNINV VVVVLVVVVIVPVVLALLLMVLLVFLLLVVTAVCCSCNNCCNNNNRNNNCNSNCPNGSLLTNCCCLTVL VLD TTLL    0.00 |+          |
+ GGGTPNNVVVARVPPPPENNHNYNNRTQRKKKKKKQKKKKKKKPQVGKSK RQPQPPPKEKPKHPQNTQHGREELGQRRREKGAPKLVRRRRRRRRQRRLRRKRTRRRHNSERAAQKRRDLPKS TNSG    0.00 |+          |
+ FFFFFIIFFFLLIIVILLLLILLMLVLIVVVVVVVIIIIIIIIIILIIIIIILLLLILLIIILILLLLILIILLIILLLIIVILIIVVVVVVVVVVVVVVITIVILVVIIIVVVVIILVVIVLLAVVII    0.40 |+++++      |
+ DDQDKNDQDQHDHRMSDDNNEDDDNNDDNNNNNNNNDNDNDDDNHDDDDDEDDDDDDDDDDDDDDDDDDDDDDQDDDDSDDDDDNDQQQQQQQQQAQEQQQQDNNDQQDTDDQDDDDSDDDSDQDDDQD    0.10 |++         |
+ AGAAAGGGGGGAGGGGGGAAGGAGGAAAAAAAAAAAAAAAAAAAGGAGAGGGGGGGGGAGGGGGGGGGGGGGGGGGGGGGAGGGAAGGGGGAGGGAGGAGGAAGAGAGGGGGGAAGGGGGGGGGVAAGA    0.70 |++++++++   |
+ LLLLILLLLLFFVVVVILLLYFFFFLLFFFFFFFFLFFFFFFFFFFFFFFLFIFFFFFFFFFFLFFFFFFFFFFFFFFFFFFIFLFFFFFFFFFFFFFFFFFFLFLFFIFFFFFFFLIFFFVLFFFFLF    0.50 |++++++     |
+ VVIIIMIIIILIIIIIIIIIVIIILIILIIIIIIIILILLLLLIVILIILVLLIVIVIIVIIIVIIILLLLLIVIIILLVIILVLLLLLLLLLLLLLLLLLLLILILLILILLLLLLILIIIILLIILI    0.70 |++++++++   |
+ AAAAACCTDALCAAAAAEEEACCCLAGGGGGGGGGGGGGGGGGGGGAAAGGGGGGGGGGGGGGGGGGGGGGAGGAGGGGGGGGGAGAAAAAAAGAAAAAAAAAAGGAAGLCDALLLCCLLLGLLYNACS    0.10 |++         |
+ PPPPPPPPPPPPPPPPPPPPAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPAAAAAAAPAAAAAAAAAPAPAAPPPPAPPPPPPPPPPAPPPSA    0.50 |++++++     |
+ GGGGGGGGGGGGGGGGGGGGGGGGGSSSAAASSASSSSSSSSSSGGGGGSGSSAAAAAAAAAAASASGGGGGGGGGGGGGGGSASSGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGDG    0.40 |+++++      |
+ HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHNHHHHHHHHHHHHHHHHHHH    0.40 |+++++      |
+ VVVVVVVVVVVVVVVVVVVVAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVAVVVVVVVVVVVAVVVIS    0.40 |+++++      |
+ ASAAAAASSSLSSSSSSCCSASSSCSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSASSSSCCCCCCCCCCCCCCCCCCCACCSSSCCSSSSSCSSSSTNSANV    0.40 |+++++      |
+ TTTTAASTTTTTAATTSTTTITTVTVVVVVVVVVVVVVVVVVVVMMMMMSVATTTTIITTTTATTTTMMMMMMMMMMTTTVTAIVVTTAASSSASTAATTTTTTTLTTVAVAATTMASTTASAAATTTT    0.40 |+++++      |
+ VVVIIVVIIIVIVVVIVIIIIIIIVIIIIIIIIIIIIIIIIIIIVVVVVVIVLIVVVVIIVIVVVVIVVVVVVVIVVVVVIIIVIIVVIVVVVVVVVVVIVVIIIIVVIIIIVVIVIIVIVIVIIIIIV    0.80 |+++++++++  |
+ MMMMVKKIIITIIITIIIIITTTTMSATSASSESTSATTTTTTSIIIIIITIIIIIIIIIIVIIIIIIIIIIIIIIIIVIIVIISSTMMMMMMMMMMTMTAMMMVTTMTITIVLLLITTSIITTTIIST    0.10 |++         |
+ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGDG    0.40 |+++++      |
+ PPPSSAAVVVLTSAAGATTMWLLLIAASAAAAAAAASAYYSSSALVTSVCGSSSSSSSSTTTSTSSITTATTSTTTTCLCTTSSASEYYYTVIWTTWYYLLYMLLMWSMKVSTITLSSLLAARLTVTTL    0.00 |+          |
+ EEEEEDNKKKEGNKKKNKKKAKKKHKKKKKKKKQDQKKQGRANKEHEQDTGKRRRQGARAEQDARDAAQADANQAAERRRKDRFQKREEEGGESSFTEECAEDEEAQQKKDEEEAEENAQKIRGEKEER   -0.00 |+          |
+ EEEECYYGGGGPSAAAAPPPIPPPEIIIILIVIIIIIIIIPIIIPPAPAPAPPPPPPPPPPPAPPAPPPPPPPVPPPPPPPTAPIIAAEEQEEEEQEESDEEEEEPEEIPAADPPPVAPPASAVLPPAP   -0.00 |+          |
+ WWWWWFFWWWYYWWWWWFFYFYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYFFYYYYYYYYYYYYYYYYYFYYYYYYYYYYYYYYYYYYYYYYYFYYYYYLYYYYYWFFFWFYCYFYY    0.50 |++++++     |
+ DNDQRKRVEEREKEEAKEEEEYYY VEERRRRRQLQEQEEEEEQEDQQQEDEREDHEEEEEEASEARQEADHQHQREERDHKAETEQEEEPPREGEERNFPRYEYDQV EKAPRNAEERERDDDEREAY    0.00 |+          |
+ FFFFFFFYYYRSFFPPYFYPPDGA DPESPRPPSPPPHNPKEPPFFFAFPSAFFFFHGYFFPERYPVFFFFFIIPFFFFFYFDQPEHPPPEESPPPPQRPAPPEPRPP FRFPFFFPFFFFFFFDEPDE    0.00 |+          |
+ VVVAAIILILFVLVVVLLLFFPLP ILFTAAALTILFILLILIIIIILIALGVFVFFFFFFMFFFFIIIIIIIILIIIVIFLCVLFIIVVLLLILLIILVILLLIFLI LIMLVVVLILLIFIMLILLY    0.00 |+          |
+ WFVIVVRTTTPAPPAAPSSSACCC MVPVVAVVVVAPAVAAAAIAAACAAAAAAAAAAAAAAAAAPACAAASASAAAAPPAPCCVPAAAAAAVAVVAAVAASVSAAVA SPAVAAVAPTATPVRTLAAF    0.00 |+          |
+ QERDTEDEKE REREEEETRAKEEEHQTETDNDDDARDKTANKDERADTRREEETEQREEEERTARRRRERREEEEQRGREEDKEREKARREEAEAHREENEAREQEAKSEEETEERKERERKDEKKRL    0.00 |+          |
+ HKDHQEAKEK EKEQQEDDDRTKKASDKNQVNKQRQEKTKEEKNQDDQEDRLQEQEEDEEEQDEEQDHHFDQKKQEKDVDEEKKCDKKEERRTRKTRDRTRKHEKSRREETDREQKDDEDNEEEEKKKR    0.00 |+          |
+ HHHHYYYFYY  YYFYFYYYTYYYFFYYYYHYYYYHYYFFFFYYFFFFFFYYFYYYYYYFFFFFYYYYYYYYYYYFYYYYFFYYFYYYFFYFYYFYYFYYYYYFYNYYFY YYFFWYYFYYYYF Y HS    0.00 |+          |
+ GDDNGNNGGG  NGQRGGGNGHKKPNRKGGHNNKQRGKRKHKKRHQHHQRRRGRNQRRQGREEAQGRRRKHHYQHRHGGGQNRQNNQKGHQRRGDRQHQGHRRRKGRGDNGAGGHGNHGHQKGKGGGSK    0.00 |+          |
+ IIMLIIIIVIVLIVVVFIIIAAAAVMLRTTTTTTVIRLTTKRTVRKRKRKTKVKKKKKRKKKKKKTKKKRRKKKKKKKKRKKVKIKVVVVVVVTVVVVLVVVIIIRVVIVRMATTKLLTVIILLVIFLK    0.10 |++         |
+ APPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPSAPPPPPAAPPPPPPSPPSP    0.50 |++++++     |
+ TTAVVAAQQQQCTTVVTQQQVMMMQIIVVVVVVVVIVVIIIIILVLLFLVIVVVVVVVVVVIVVVLVLIMLLVVFLILILVVLIIVIIIIIIIIIIVIVIIIMIIIMIIGAGIGGACCAGAASCGQVCM    0.30 |++++       |
+ AAASSVVVVVVVVVVVVAAVVVVVVVVVVVVVVVVVVVAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVTVVVVVVVVVVVVVVVIVVVVVVVVVVVVVVVAVVVVAVVVVVVVVVIVAVVAVVAVVVCV    0.40 |+++++      |
+ VVIIIIIVVVVVVVVVVVVIVVVVIVVVVVVIVVVVVVVVVIVVVVVIIIIIIIIIIIIIVVVVIIIVVIVVVVVVVVVVIVIIVVIVPPVVVIVVVPVPIVVAVVPIIVIVVIVVVVVVVVITVIVIA    0.30 |++++       |
+ AAAASASAAAAAAASAAAAAAAAAASSAASSSASSSSASSSSSGAAATAAAAAAAAAAAAAAAAAATAAAATSSTASSASAAASSSTTATTTTTTTTTTATTTGSAASSTTTTAAAASAATTSAAASAT    0.60 |+++++++    |
+ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG    1.00 |+++++++++++ 
+ FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF    1.00 |+++++++++++ 
+ LQTHSEQEEEEEEEEEENNNEEEEDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEDDEEEEETEDETEEEE   -0.00 |+          |
+ PPSPDAPPPPPPPAPPAPPPPPPPAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPAPPAPPPPTSAPAPPPAPAKP    0.10 |++         |
+ DVEERLLVVNDEIHINYLLLLIIIMVVVVVVVVVVVVVVVLLVVVTLLVLLLLLLLLLLLLLLLLLLLLLLLLLLILLLLLLVLVVVIVVLLLVLLLVLVVLVLATVHFLVLLVAAALLGEIMVKEAAI   -0.00 |+          |
+ SSSSSDDDDDDDDDDDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDNDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDEDDED    0.50 |++++++     |
+ LLLLFIIVFVIVVIVVYIIIIVVVVMVVVVVVVVVVVVIIIIIVLLLILVIVVVVVVVVMVVVVVLVIVIVIIILLIIIIVVVVIVIVLLLIVLLLLLLLIILVMLILIIIILIIIIIIILVIILVIIV    0.50 |++++++     |
+ LLLLLALLLLLLLLLLLLLLLMLLLMMMMMMMMMMMMMMLMMMLLLLLLMLMMMMLMMMMILMMLLLLLLLLVLLLLLLLLLILLMMLLLLLLLLLLLLLLLLLVLLLLLLLLLLLLLLILLLLLMLLL    0.60 |+++++++    |
+ AAALAGSLMMLILLMTLYMMAAMMYEEEEEEQEEEQEQEEDALEQQQQQQHQQQQQQQQQQQQQHQQQQQHQQQQQQQAQKQQHEQQQDAEEEEEDEAENQQQEQQAEKKEEAQQDGYQLLAILTLLQM   -0.00 |+          |
+ AAASSASAGAGAAAGAASSAASASGSSASSSSSSASGSSSSSSSSSGASSSSSASAAAAAAAAASAASSSSGSSASSSSSATSSSSGGAGGGGGGGGGGAGGGAAAAGAGGGGAAASCASGGAAAAGGS    0.60 |+++++++    |
+ FMILLLIIIILVIIIIVIVVLIIILIVVIIIIIILIIIVVVVVVVVVIVTIVAIIIVIVIIVIIVLVIMIVVVIILIVVIVVVIVIIIIIIVIIVVIIIVIVITIVIMVLILVLLLLVVIIVLILIIII    0.40 |+++++      |
+ YYYQDYYLFLLLYFAAAYYYVVIFYYDLLLLLLLLLSLLLLLLLALVVLLLLLKLLLLRLLLLLLLLWWWWMWWVLWYHHYDLLLSFYLLRRRLRRLLLLYLLRYLLLNKLVLLLCIKYYSLHRAYNLY   -0.00 |+          |
+ SSSTTFFTMMMAYHEEELMMKMMLLERMRRRMRRMMMMNNNNNMMIMMMMLMMMMMMMMMMMMMMMMMMMMMMMMMMMMKLMMMMMAHKKRRRLQHMEAKAMLMHAMRMVMMRILRQSMTLKEEVLISM   -0.00 |+          |
+ VVTLVLILLLLCIIIIIIIILIIILIIVIILIIIMIILIILLILVVLLLLLLLLLLLLLLLLLLLLLLVLVLLLLILLLLILLLLICCTTTTATLAATCVCCTLTLLAILILCMMMLLLLVILLALLMI    0.50 |++++++     |
+ LLLLVTIILIVLLLMLLLLLTLLLVLVVVVVVTTVVVVIIVVVVLLVVIIVIVIVVVIVVVVIIVVILLLLVLLVLLLLLLLVILVVIVVVVIVVVVVVVLVVVVVVVLILLVVVAAVVCVLLLLLQVL    0.40 |+++++      |
+ RRRGRKNRRRQKDARRRKRREKKKKKHRRKEKKRREKELKRDEETDEQERRRRRRRRRRRRRRRRRTRRKREQQERQLQRKQRQKKRQEETLLRDERGREDRQCLTRRDDRRREQKRDKKKQLTVEMKK   -0.00 |+          |
+ QQQNQQGLMMQMMMQQQQQQLQQQQQQQQQLQQQQQQLQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQLLQQQQLQQLQMQQQQQLQQQIQQAQMQQQQMSDQLKAQQQ    0.10 |++         |
+ VLICVQNVIYILMLLLIKIIILVMIKLFKKKKKKKMFSKSQQMALIKFKICILVVIVVIVVVVVLLILIIMFLIFMLLILIFILTFLLLLLLLLLLLLLLLLLLLTLLYILRLRRLVVTLILLIFMVII    0.10 |++         |
+ SLASVNIKRKRRDAAKVKRDRVIIVVALAVNVIVVLVINNNNNVVAIALNNNNNNNNNNNNNNNNNNAARAVVLVARARRYLNNLKEEEEEEEEEEEEEEEEEEENEEINQDEKRQNERKLHLKQSEHD   -0.00 |+          |
+ SEDNSKKRKEERKERNREDRENSNEGHEAELAAAEQEAAKSAASEEADAEAEDEDEEDDEDQDDEEEEQEEGDEEAEEDDKRAENESTAEERQQAAADAASNKEQEAHKNEQATRTADADKSRNEDKRE   -0.00 |+          |
+ GGGKGTNGGGGGNGGGGDDGGGGEGNQDGGTSGGGKKTQGGGNRGGAGGGGGGGGGGGGHGNGGGGDGGGGQRGNGNGGRGGGGKKGEGGGGGGGGGGGGGGGGGGGGHNGGGGGGGKGNKGGDGGGGG    0.10 |++         |
+ QKRVKEKEEEVREREEENTEREEERRERKVEKEKRRRDKTTTTQRRLRQRRRRRRRRRRRRRRRRRRRRRRQRRRERRRRRTERERQKRRRERRTRHREERRKRKARKEARRREEKETVDEDEQKRIEK   -0.00 |+          |
+                                      Q                                                                                              -0.00 |+          |
+                                      H                                                                                               0.40 |+++++      |
+                                      D                                                                                               0.30 |++++       |
+                                      V                                                                                               0.20 |+++        |
+                                      T                                                                                   I          -0.00 |+          |
+ PRVVPKKAAAAVPPYHAPPAPAAAASACAASAPAYHCPAFFFFVAASCPHYYCAAAAAFHHHHAFATCCAASCCCACSCCASACAAFFSAHHAAPAAATTSAAFHAAARSFAPYYYFPAIPTAHPRSSP   -0.00 |+          |
+ MFFTQRTKKRRGKRGKKRKKEKKKVEREEEVEEEAQEEEKEEEAEEQEDEDEEEAEEEEEEEAEEEDEEEEQEEERAEEEEEEDKNTDGEETEEEERERGEEEEERERKVEERGAKKRQRSYRQFERMK   -0.00 |+          |
+ LLLLLFFIIIVVLLVVLIIVVVVVVLLVLLVLLLLVLMIVVVVLVVVIIVVVVVVVVVVVVVVVVVAVVIITVVVIVVVVVVVVLLCCVVLVLVLLVVLVVVLVVAVVVIVILIIVVLLVYTVVFVVVI    0.40 |+++++      |
+ DDDSDEIVEIDTIIKVVQDEAEEEEEEEDDDEDDEEELYYYYYQEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEKGEEEENEVVDDDERAEVEVVEQEEVEEEVAEEVTEEDEKYNAIVIDDE   -0.00 |+          |
+ NNNNINNNNNNNNNVINNNNNNNNNIIIIVVNVNVIIINNNNNVNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNIIINNNNNNNNNNNNNNNNNNNNNDNNIIVNNNNVNNNLNNNNNAN    0.20 |+++        |
+ CCCRQLLEQEAEEEEEEEEEVEEAAQQQQQQQQQQQQQQQEEEQQQQQQQQQQEEEEEEQQQQQQQQQQQQQQQQQQQQQNQQQQEQQARAAAQAAQRCACQQEQRQAAEQQQAQACSQLAEKCCEGSE    0.10 |++         |
+ YYYYEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYFFFFFFYYYYYFFYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYGY    0.20 |+++        |
+ APRPPKKNTEPLTKTVSKNKPTIKAKAKSSSSTSSSKSSKAAHSAARKRTSTTATATSASISIISTTRGTDRKSKANTTTTATTKKRIGGPAEPSPAGSEGASGTTRPTKADRRSPNSAPPKTSPSPAT    0.00 |+          |
+ EEEEYTTRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRKRRRRRRRRHRRRRRRMR    0.20 |+++        |
+ VLSVRCCAVAAAVVAAVAAACGAGAVSSAAASASAAVAVAAAVAVVVIVVAVAAAAAAAAAAAAAAAVIIIVLIIVLVVVFVAAVLSSVVAAAAAAAVAVASVCLAAAAVGIAAAAVAVLVVVVVAVVS    0.10 |++         |
+ VVVVIVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVLVVVGVVVVVVVVVVVVVVVIVVVYV    0.40 |+++++      |
+ RRRKNSKKKKSEKRTKRRRKTRKRKSTNSSSSTSTTTTSSKRSTRPPHPTTTSSTTNTTSTTSTTTTAPPPPQKQPQPRATRSNSSQKSSPRRSTRHSQSQRKSKTRATRNKRDSYCKRRRKRKKKKST   -0.00 |+          |
+ APPQPQEWYYDDPWWWPEDPKEPEPMMREEEEEYAEELRKPKKYKEDEDRARERPYRRRRARPPRAEDAEREPESEKWPAYPQRYYPIRRAPPRAPRSMREEPREERGEDRPPDDQKPPLEYENPEPMW    0.00 |+          |
+ GGGNREDEEEEREEEEEEEEEEEEEEEDDEEDEESQEELELEEAAEANAESEEDDEDADDLEQDNGQAAAHQDENRQDEEKETKEEQQEEAEEEEADDADAFKDEAQEEEEEEANDDEEEQQEEEEEEE   -0.00 |+          |
+ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGEG    0.30 |++++       |
+ NNNNNNNNNNNNNNDDNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNSNNTN    0.50 |++++++     |
+ PRPALKKVVVPPVTLLVIILLVVILLLILVLLTIRQLLVVELLEPPMGTRARRLRPLAELERRRRLLDAHELPRLPQTVPLTQLVLASPRPPVVVPSIQALVPPLTPAKVPRPPPPPLPKVVLLRVTAV    0.00 |+          |
+ FATAYRIKEVKVFVEKTKIKPILVKKKNTHTAVAAKNIKKKKKTQVLLLKKKKKKQNAKRKRIIKKKPQPALMVISITAVKAKLKKHLEVAAAAFARHSGAPKARTASETQVVRKQRAAKEYDKERIRK    0.00 |+          |
+ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAAAASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA    0.70 |++++++++   |
+ KQRKLNNQQQMKKQQQWQQQQQQQQQQQQQQQQQQQQQQQKKKQLLQQQQQQQQQKQQKKQKQQQKQLLLLQLLQLLLLLQLQQQQQQRQIQKRQRRRQLQQQRKQQRQLLQRRRRRLLQQQRQQLLRQ    0.20 |+++        |
+ QARATEEERKAEKRASRKKKRKKKKAAKAQAEQQRQKSNNAEARAAQRKKSDAQASAASEAEAGQAARAAAQEEQREAKANNAHEEKQRGAAQRQEEEDRQDEKEAAAKRNAAQSNAKAERVKQQEKRQ   -0.00 |+          |
+ IQCICLLLTMVLVYASKAVVSIIIMMMLKKLMALLMLKLLLLLQAAAAALMLLLLVLLLEEEEEALLAAAAAAAAAAVLVLLLILFIVVIMMMMTIALLVWLLIVLALLYMLAVIIMIALIERCLAMVV   -0.00 |+          |
+ LLIIVIIIIIMMMIIIVMIMLMIIMVINVVVVVVVIIIVVVIVVIIIMIVAVIVVVVMVVVVVVVTVVIVVMIMMVMIMIVMMMVIIIMILLLILLIVVMVIILVLVIIIMILMMLVMLIIIILTMMVM    0.40 |+++++      |
+ QAANNSDREDNESNHHMDDDWNNNAEEENNDNKDDEDNQKAAEDDAAAADAADAAASDASASAAAGAQQATSSKQEHSADASQARNDQQSREAASARSQDEGRANNESEKGHEDYYEDAKENAKEDDEE    0.10 |++         |
+ QEEKNEEKAKMRKEETEEQERKEKEKRKQQERRKQTTEKKKRKRADDEDERSEEEDDDDDNQEDDRQEEEEEKREEKREEEREEEKQEEQDDDEEERTEDRQKETEEQQEEKRDEKREKEEKEEEREER    0.20 |+++        |
+ VATAVVVFLFVAVCAVVVVVAVVVVYYYFYYYCYYYYVYYYYYVVVVVVVTVVVVTIVMIFVVIVITVVVVVVVVVVTTVLVVVCYVVVVVVVVVVVVIVVVIVIVVVTVVIVVVVIVVIVVCVMVVVV    0.40 |+++++      |
+ FLMFFFFFFFFFYCFFFFFFFFFFFFFFFLFFFFFLFFFFLFFFFYFFFLMLFFFFFFFFFFFFFFFFFYFFFFFYFMFLFFFLMFFFFFFFFFFFFFYFFFFFFFFFLFFFFFFFFFYFFFFFTFFFF    0.50 |++++++     |
+ ENETDTCEDEEEEEEEDRDKREEEEQEENTEKDMEEDEKKHEKDEECRMETEREEEEEEEEEEEEEEEEEEVEEQEAEEEEREEEKEEEETETDTTREQEARMETEMTDEEEEMRQEDGTEKEDERKFD   -0.00 |+          |
+ VDVIVYQVVVPPVVATVVVVTPSPPTKKIVVVVVTPKLPVPPPVPRVLLLLLIMLLLALLLLLLLLLLLLLLVVLPVLLPLVQII PVVVVVVVVVVVIIIVVIIVVTIVTPVQPVPIEPKLELA TPL    0.00 |+          |
+ VTVVQCNKVVCERTVVVTGTVAICCRRRRRRRRRRRVRCCCCCRRRNKKRRRRRRRRRRRRRRRRRRRRRRGRRKRRRRRRRRRRKVVATTTTATCRASAAISAGKVCRTRVVSAGCCVVGVVICKSTE    0.10 |++         |
+ DDDDSEDDDDDDDDDDDTSETDDDDEEEPPDDDDESSDDDNDDDAPGAGRDRPKDRPERDEEEEAENEEEEGEDKPEPPPKEPDEVDPDDDDDDDDDDDDDPDDTADDDDEDDDDDDPDDDDDPDEDED   -0.00 |+          |
+ AAAAVHSAAAVRAADTAARRGVVVISSLQHSNSSHHLV     QSSDRDTSEEHSASSAQSQSSRSDFFFFGETSTTYHDETMRNPRRRRRRRRRRRRARQRRRQSQQTSAAAAASMAASAAVGSDSTG    0.00 |+          |
+                          FFFFFFFFFFFFFFFFFFFFFSSAFFFFFYFFFFFFFFFFFFFFFFSFFSFFFFFFFFFFF                   A  F          Y I   W  Y    0.00 |+          |
+ PNDHHENKKKEPYAAAYEEERAPAMETKRRRRRRRRRREESEENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEAEEEEEEEEKHRPQAATSQAAQRTDKEKEEEHNTEAPLLQQNA N PVESEAV    0.00 |+          |
+ WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWFFWWFWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWFWWWWWWWWWWWWWWWWWWWWWWWWWFWWWWWWWWWWWWWWWW     0.10 |++         |
+ RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR    1.00 |+++++++++++ 
+ GGGGGGGAAAGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGSGGGGGGGGGGGGGGGGGGGGGGGGGGGG    0.70 |++++++++   |
+ VIIIIIVLLLFFILIIIFFFIFFFFLILLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLFLLLLLLLLLLLLLLLLLLLLLLILIIIIIIIIIIIFILVIIILLLIILLLIILLIILIILILLILV    0.60 |+++++++    |
+ GGGGGGGGGGPPGGGGGPPPAPPPPGGGGGGGGGGGGGGGGGGGGGGGGGGGGNGGGGGGGGGGGGGGGGGGGGGGDGGGGGGGGGGGGGGGGGGGGGDGGGGGGGGGGGGGGGGEGGGGGGGDGGGGA    0.20 |+++        |
+ TVSVRVLIVVVTVFFYVEKVDVVVVHPNPPPPPPDDNDLLEVVNEEVEIYWSFISTEELQELAQEALSSSSTDEESEFFRTWSFNELEVLVVRIMTTLLVTETVKMPVPNRIELTFMIVTNSVKVVNSV    0.00 |+          |
+ IIIIVIIIIFIIVVLILIIIVIVIIIIIILIIIIIIVIIIIIIIIIIIIVMVLLLVVVVVVVVIVLVIIIIIIIIIIIIIIILIIVIIIIIIIIIIIIIIIIIIIVILLIIIVLILILIIIIIVIVIIF    0.60 |+++++++    |
+ PPAPPKKPPPPPPPPPPPPPPKKTPAPPPNPPAANPPAKQAAVPEDEEGAPPPPPPPPPPPPPPPPPDDDDAAPAEPSSPPPPPKEPPPPPPPPPPPPPAPPPPEAPPPEPPPPPPPPPTPPPEPKEAP   -0.00 |+          |
+ ASRGDDNKKKQEKQLKENNEGDNDDHCNNEQSNKALDNNENKNRWASEEDHDNYQYYAYYYNAAYNDHFHHDQEERDHQWYNESNNAEAADDRKRDDGAREQAKNDRDKKQLQGDMEEAGLKEDKGDEK   -0.00 |+          |
+ SSSSSSSSSSSSSSSSSSSSGGGGSSSSSSSSSSSSSSGGSSGSSSSSSSSSSSSSSSSSGSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSGSGSSGSSSSSSSGGSSSSSSSSSSSSSSSA    0.70 |++++++++   |
+ GGGGGGGGGGGAGGGGGIIVNGGGGAAAAAAAAAAAGAGGGGGAGGGGGAAGAAAAAAAGAGGAAAAGGGGGGGGGGAAAAGAAAGGGGGGGGGGGGGGGGGGGGAGGAGGGGGGGGGGGGGGAGGGGG    0.40 |+++++      |
+ YFYFYFLLLLLLGLLLLYLYLMFLYLLWLLLLLLLLLLLLMMLLMLVVVLLLLLLLLLLLLLLLLLLVVVVILLVVLLLMLLVLLYLLLLWWWYWWLLLLLFFFLLLLLYLLLLLLLLLLLLLYVGLFF    0.40 |+++++      |
+ ASRSATGEEERKYARAADEEEKGKKKRRQMKIKTRQKKEEDKCQKRHETKRKARKRKRRKRKRRRRACRKQAKKERKRKQKGQKKEGGVGRRRKTRASSREGEAVAQCKKFGAVVTKCGKFDSVCAVVR   -0.00 |+          |
+ ILLFLLLLLLLLHFLLFLIILLLLLLLLLLLLLLLLLLLLLLLLIILLLIIILIIIIILLLLLLIIIIMVILIILLILIVIIIILLLLLLLLLLLLLLLIFLVVLLLLIIIVIFFFILVLILLLLLLIL    0.30 |++++       |
+ SQLARRKRKRRRSRRRKKKRVRRRKRRKKRKRNRRKKRRKKKKKRRTTTRRRDRRKRRKKRKRKRRRRRRRTNTTRRRHRRARKKKRRRRSSSGSSTRRRQARRRRRRNNRRRRTRRKRRRRRKKARRK   -0.00 |+          |
+ EKPSEEHKKKEERDEEEKDDPEEEPEEDPPGDAPDDEEEEDPDPGPPPPEPEDSAAPAERPQEPPETDEDEPSDEEPEPEKDSEEDPSPEAPDYPADREEPAPQEPPPKTEKPPDDEPEKEEEDKKEDE   -0.00 |+          |
+ ARERAKIEEEEDDKKEKEEEEEKEQEEEEEKKAEAAAKEEEEESRKEADTERAQEEGKPAQSAADAPAAQAANAQPERDREEESTEAEESAKRAQAEEQKEEKENAQPDEREEEAHEEEVRETKEREEE    0.00 |+          |
+ YFFLWYYWYWFLYYYFYFFFLFYYFYFYYFYYYYFYFYFFYFFFYYYYYFFYYFFFFYYYYYYYYFFYFYYYYYYYYYYYYYYFFFFYYYYYYFYYFFWYFFYFYYFYYYYYFYYYYFYYYYFYWFFLF    0.60 |+++++++    |
+ GAASHKSKKKSALRGKKDSSAKKEEAKGAAAAQHAREAASDAAQAAQQQAAAAAAAAAAAAAAAAAAASAASASAAAEAAEAASADAAKRARARARALQAKAAAKAADEEAEAARKGAAHSSRASEEAS   -0.00 |+          |
+ GKAHHKDEDDADKRRQDDQEAKKKKFEHHHHHHHRFKRRAASHHAARQQADADEAEARAKAKGGDEQAARATQCQAQRGAEQAESKPIRRQDEEEDRRQASEAAMRASMQDDARQKEARRQMDFAQELK    0.00 |+          |
+ WNHLRYYLYFWHHYLYYHYFLYFYYLWLRRRRRRRLYFYYIILRFFFFFFYFLFWFFHWYYFFFLFWFFFWFFFFFFFYFFWFFYYWYFYFHFYFFYFFFFYFWYFFLFFFWHFFFFFFYYYFLFFKYK    0.20 |+++        |
+ DDDDDDDEEEDDDDDDDNNNDDDDDDDDDDDDDDDDDDDDNDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDNDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDSDNDDDDDDD    0.50 |++++++     |
+ AAAAAAAIVIAALAAAAAAAAVIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA    0.60 |+++++++    |
+ RRRTRSLRRRQ YMLFARRRRHYHLEEEEEEEEEEEEESSKRSEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEKALEEEEEDEEEAREHENANEAAEVLALMMLEERERRRRRRATR    0.00 |+          |
+ RLLNKEKNTSK YYREAVAEKEENKIRKLVIRIRRTILKKKEKVQEAIRERKEKAKRARVKTRRHRKRRRRRIAKRLKLRKKKQKIVKKKTYFRLVTRVRCLLRIKARKKRKRQEERKYKKEFKKKKKV    0.00 |+          |
+ RQRDRRKYFFK NQHYEKKKRNHIKLYLRIHLRIHVLILKVQVKKKHYYRRKRRRRRRRRRRRRRRRRKKKRKKYRKLIIVLRRAVKRRKRRRIRRRKRKRRKRKRKRTQKKRRQRRNVKKQKQKVIRQ    0.00 |+          |
+ FFFYFFFYYYFILYFFYYYFFIEEFFFYFYFFFYFFYFYLFFFFFFFFFFFFFFFFFYWFFFFFFFFFFFFFFFFFFFFFFFFFFYFFFFFFFFFFFFFFFFFFFFLFFFGFFLQFLFLFYLLLYFHFY   -0.00 |+          |
+ PPPA GDDRKDEGGGGGDDDRDDEGEANKRGAAAQKKKDDDDDAGGRNRAEEPPGTQGDDSAAAGANSTAARDCNATEDAEDNEKKAEDDASNEGDAASDAGTDSPGLDNNAEGEDEESQGGNANEENG    0.00 |+          |
+ HDLPH                                                                                                                         D      0.00 |+          |
+ QFEVA                                                                                                                         L      0.00 |+          |
+ CDNDL                                                                                                                         Y      0.00 |+          |
+ QTGFAIVPVVVIIIIIIMIIIVILISS DDGEDK SDT     GVIPSLLLVVLIVLLVMMIMLLLLVVIVPVLTVTLMPVVMLEDNAVVVVVVVVVVDVIVIVICPPVILLLLLIIIVFLIICIDS      0.00 |+          |
+ DEKPTNKDKETGEKEPEEEEDPPPEII RKRFCV VVH     HGGARQSSSEGGDGVPNVHPDSESPPPAQSPQPPPPPEPKPYILD                 DGAKNPPRTTTEKGGRKEKPAA      0.00 |+          |
+ ENESFLIVPVIIDEEDILVVTDEVLLLLLLLLLLLLLLCCCCCFYYPAPPPAFYYYYYQETDEDYAANDNSHDNVDNGGGLGEELLLL                 LPALYEEPLLGLLVDEEPPSFS      0.00 |+          |
+ GRRQQSEPPPKRKLLLKPKEAIIIKSHPPDPPPPSSPSETSDKTGAQQQKSKAATKQRDLPLIMRRQLVVPRVKHVLVVAPRISTPQS            T    PARPK  D    SE KKAP AL      0.00 |+          |
+ DKLCPKKKEKPPPTTTPDDDGKKEDKHKVVVSMTEDITVVVVVHGVQKEEEVPSPSPPSRARSSSSPKKKSQKKAKKRRRERAAHTTSGARDHQGESASGGAQAEPPPP   E    E   PPY DA L    0.00 |+          |
+      TH  NTDIPPPTSVTVEEEVEEEKAQETTTEAKKQGRQITA                                      KQMLHHDGDHHGGHSHADVDT AG    R            FE K    0.00 |+          |
+           KYKEEEEEKVRTKKKSEEEDEEPEPPEPSSNSSDRR                                      TEATILIIIILLLILIILERT AT    G            QI D    0.00 |+          |
+           KT EKRRNEDDIIIC                   AN                                        PPACHQQRQTTCPEATKDN P     V            PKVR    0.00 |+          |
+            L WWW VATANPNT                   AP                                                            E                   SRT    0.00 |+          |
+            G SRR PPPA                       T                                                             Q                   KFK    0.00 |+          |
+ ERRAESK    H        A    IIIIIIIIIIIIIRKIAKTAAVVTSASAVVTVVPVAVAAVGVIIIIVVVVVVVVVPITAIVTSPATTTTVVATVPLVVVSPADS IFAPRVT  T WPSIVAAS    0.00 |+          |
+  ARQMEKLLLQD YKY    E    PPEDDDDDDDDEDGNKNDPPPYASRRRKPARAAPDKAASPLAAAAPAPAAAAAAEKPAQKKMTQAERSRAARAIKTEEPKQATKEREAEDNEPPQPDTPQEEEK    0.00 |+          |
+  GGNGKSPPPAEDDDDE   E    DDDDDDDDDDDDDEEEEEDEEDDDEEEEDDEDDDDDDDDDEDDDDDDDDDDDDDDEDDEEEGTEEEEEEEEEELESEEETVDDECSTEAVVVSTYPYPQGDGGD    0.00 |+          |
+ QQEVDNTDDDGSILTLL   E    NHHHHHHHHHHHHNSNSSHLPDDDVNVIHHNNHNNNNNNANVPPPPDAADPHPPPHPIHNNEPSSSPSPSPHSNSVDPPDNATHDIVGRPHARRRIDLAKKKTE    0.00 |+          |
+ MMMPMY LLL  LPPPP   A    KKKKKKKKKKKKKKKKKKKAEPPPKKKKKKKKRKPPPPPKKKKKKKPAKPAKKKKPVKKKKTEPPSAPEAAPPSSNRKANRGDPSEEGDNPEEEPVLYHASDDY    0.00 |+          |
+ PPPEPI EEE  PPPPPQKAKKKKTASLAAAAAAALLAAAAAAQDGRNRSASGAAAAKAAAAAAAAASASARAALAAAAAAAGQAAVVLLVELIEEALELDEEELAAALSFIQTTNPTAGPPPHNKKQV    0.00 |+          |
+ PPPTNR KKK                                                                                                NQ SEPGPPTKPPKRPPPPRKCA    0.00 |+          |
+ GGGTDASGGG  GGGGGGGGGAGAG                                                                                 PG EAGSGGGGGGGGGGSALRMG    0.00 |+          |
+ CCCSCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCASACCCCCCCCCCCCCCCCCCCCCCACCACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCA    0.60 |+++++++    |
+ DEDPLAILIRIIKRRKKIIIIIIILRKIQQQQQMQIIQIIIIIRRARRCEEEEEEEEEEEEEEEEEQQQQQRQQRRQQQQIEILKKIIRMRRRIRRIRRMIIIKIRIIIRRRRKRILLRIKRALRRIHR    0.00 |+          |
+ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCSSSSSSSSSSASSSSAASACSSCCCCACCCCCCCCCCCCCCCC    0.60 |+++++++    |
+ AAAEASGGGGDDPAAAAGGGGSDSNGGGGGGGGGAGGGGGGGGGGGGGGPPPPGGGGGGGGCGGGPGGGGGGGGGGGGGGGGPGAPGGGGGGGGGGGGFGGGGAGPGGPGGGAGGGGGGGGNKHGGANG   -0.00 |+          |
+ RSRKSEEAAAKREEEEEPPAREKKEDDDDDDDDDDDDDQQKKQDEAEDDAAAAATAAAAAAAAAAAQEEEEEEEDEEEEEKSAEEEEQESEEEQEEDQDDLELLQDARKDENDDDEEEEEEEERDDAEE   -0.00 |+          |
+ VVVVIIVVVVIIVVVVIIIVIIIILIIIIIIIIIIIIIIIIIIIVVVVVIVIIIIIIIIIIIIIIIIVVVVVIIVVIVVVVVVVIIIIVVVVVVVVIVVVVVVVIIIVVIIVVVVIIIVIIVIVVVIIV    0.80 |+++++++++  |
+ VVIIVLILLLLLTTTNNLLLMLLLLLLLLLLLLLLLLLLLLLLLVMLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLILLLLLLMLLLLLLLLLLMLLLLLLLLLILLLLLLLLILLMTLMLLLIV    0.50 |++++++     |
+ MLLLMLLRRRRRLLLLLRRRLRRRRRRRRRRRRRRKRRRRRRRKKTTTTRRRRRRRRRRRRRRRRRRKKKKTKKTTQKKTRTRRKKQQQQQQQRQQTQTRQRKQTRRQVKRKRKKKKKRKLLRLQKTSM    0.20 |+++        |
+ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG    1.00 |+++++++++++ 
+ KRKKKKKLLLILILKKIMLVLEEEVVVMLILLLLLVMLLLLQLLARRKRVAAVVEVVLVVVAIVLAHVVVARVVKAVVVVVKVVNVQYHVLMLLLLANQIQVIRNLILKKVQRKKKQTVKRIKEKIKRL   -0.00 |+          |
+ LIVMQKKAAAAASAAAAAAAAKKKKAAAAAACAAAAAAAAAAAAVVCCCKKKKKKKKKKKKKKKKKGIILICLLCVLLIIAINKAARKLLILLKLVRLLLKKKLKIKAAIIILMMVTRIQMALVCAAAI    0.20 |+++        |
+ ENLASLSLLLTEKKKKKRRRTLLLEKKKKKNKKNKKKKKKKKKTKKKKKKAKTRRSKQKKKRRRHSKKKKKKKKKKKKKKRKNKKKKKKKKKKKKKEKKQQKKKRAKRKTSTKQQTITKKLYLEKTKLD   -0.00 |+          |
+ PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP    1.00 |+++++++++++ 
+ VNTDHNKTTTVRTTTTTEEEEHTTTLFTKKMKQKNQPNYYYPYQPTHAHTTTTQARTRTVAITALRTRHWWRWWSWWWWWTWDTLTSNSDHHNVNPTDTECQKTNELDTIEPLNDSPLPTPTPQSKSPP    0.00 |+          |
+ AQDADKEQQDDDDDDDDDDEHDDDDDDEDDDDDDQDEQEDDEDEDAQDQEDDDDDDDDDDDDDEDDDQQQQDQEDAQEEEDQEDDDDDDGEEQDEQDAEADEQEEDQADEEEAENAREADEDEDDDQDE    0.10 |++         |
+ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC    1.00 |+++++++++++ 
+ RKRPLEDPPPKPPPPPPKKKAKPKKKKQKKKKKKKKTKKKKKKKPPPPSKKKKKKSKSKKKKKRKKEKKKKPKKPPKKKKKRKKPKPPPPAEPPPPTEPPPPSPPAPPKSRPPPPLPKPRPPRKKPPPP   -0.00 |+          |
+ LILFRLLHLLLLLLMLYLLLLLLLLVVVVVVVVVVVIVVVVVVVLHLLLLLLLILLILLLLLLLVLMVVVLLVVLVVVVVLVLLLIAVAAAAAAAAAAHAAAQAELARLLLLELLLLLLLLMLLVLNAL   -0.00 |+          |
+ YYYFYFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFYFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFY    0.80 |+++++++++  |
+ QGGGAGSGGGDGMMMMKRRKGGGGGGAGGGGGGGGGGAGGGGAGGGGGGGAGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGAAGGGGAGGGGGGGGGGGGGGGGAGGKGAGGAGNSGGAMSKGMGGG    0.20 |+++        |
+ THAQHKKKKKKTKKKKTGKNTKTAKKKTRRRRRRRRTKKKKRKKTKKTTTTTNTTDTTTTTNTKNNTRTTRGTTQTTTTTTTTKKNTTKRHTKAKTTRKKRGKKKRGRNKKRRKKKKKRIKKNKKKKMK   -0.00 |+          |
+ AAAEDGETKTTKTVKARESETTVPAAAAGGGGGGGGANVAAAAAVGTSIVVVPVVPVVVVVILAAPAAALSDAAKTAAAGVAAATVIQEERVEQTSAEQQTRKQKSAGLAVKGAAEGVTKGAVAVAEAT   -0.00 |+          |
+ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC    1.00 |+++++++++++ 
+ TTTKQTNTTTTTTTTTTNNTVDTNTTTTNTTTTSTDKTTTTTTKRTNNTTTTTTTTTTTTTTTTTSTTTTTTTTNTTTTTTTTLTTTTTTTTTSTTTTTTTTTTKTHTTTTTTVTTTTTTTTTTTNTTK   -0.00 |+          |
+ PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPSPPPPPPPPLP    0.30 |++++       |
+ RKAADENRRRRTSGEDTLLTEMLMLSEQEEQEQQTATTKRQQKNEEEDQDDEDEEEEEEEDEEEEDAEEEEQEENEEEEESQEEQTEEQERRRQRRRLELEDQQSSEEEDALEAAEMEEMEAVSQRKQE    0.10 |++         |
+ TTTSNHHHNHTDNTKHTHHSSNNNKNNKTTTTTTQRTQNSNNNRTMTNSNNSNNTNNNNTTTTSTNATSTTNTNSMSTTTNTDNDNQNTHTTTTNTTHTSKHNAFDNRNHNSRKRENNHKKRHKHNKND    0.10 |++         |
+ PPPPPPSPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPAAAPPPPPPPPPPPPPPPPPPPPPPAPPAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP    0.50 |++++++     |
+ VVIKVIKIVVVVYYYVIIIIVVVIVLLLLLLLLLMLIMIIIIIMVLFYFMIMMVMLVMMMMIMMLLLLLLMFIIYLIIIILIKLIILLFLLLLLLLLLLLLLMLLVLLIVVVLVVIVVVEVWVFVVAVK   -0.00 |+          |
+ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG    1.00 |+++++++++++ 
+ PPPAPPPPPPPPPPPPPAAAASSSASSSSSSSSSSSSSSSSSSSAAAAAAASSSSSSSSSSASSSSAASAAATTAATTTASTASSSAAAAAAAAAAAAAAAAAAAAAASSPPAPPPPPAPAPPPAAPPA    0.50 |++++++     |
+ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCLLLLLCCCCCCCCCCCCCCCCCCLLLLLCCLLCCCCCCCCCCPPTTTTTTTTPTPPPTPPPCTPCCCCPCCCCCCCCCCCCCCCP    0.40 |+++++      |
+ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM    1.00 |+++++++++++ 
+ VVVVAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVIV    0.60 |+++++++    |
+ SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS    1.00 |+++++++++++ 
+ DDDDVTKYYYHESILVDKKRSDDDTSSSSSSSSSSSSSGGSSSSSSSSSSSSSSSSSSASPSSSASSSSPSSSSSSSPPPSPSSSSSSSSASSASATSSGSNSSSSQASYSSSTTTSSVRSMSPNVQNQ    0.00 |+          |
+ EEEEDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE    0.80 |+++++++++  |
+ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG    1.00 |+++++++++++ 
+ AAAAASATTTAPTTTTTTTTQTTTAAAAAAAAAAAAAAAAAAAASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAAAAVTSASSSTTATSAATATMIT    0.30 |++++       |
+ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC    1.00 |+++++++++++ 
+ RRHRRSSHQQKFRSAASNNNRRRRRAAANNNNNNNNANAAAAANAAAAAAAAAAAAAAAAAAAASAAAASAAAASAAAAAAAAASSAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAHSNYAW    0.20 |+++        |
+ IIVIIIIIIIIIIVVIIIIIIIIIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVAVAINAI    0.40 |+++++      |
+ WWWWMFFFFFWEWWWWWAAAWFFFWYYYYYYYYYYYYYYYYYYYYYWYWYHYYHHYHHHHHYHHYWHYYYYWYYYYYYYYYYYVYYYYYYYYYYYYYYYYYYYWYAYYYYYYYYYYYYWYYWYRYWWYW   -0.00 |+          |
+ WWWYWYYYYYHYAAAAAYHYHYYYYYYYYYYYFYYYYFYYYFYYWWYYYWYWWYYYYYWWWWWWFYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYFHYYYYYYYFYYWYYLYYYFFYYYYYAYYYAYFA    0.20 |+++        |
+ SASSEKRKKKHRERRRRRRRTKKKTKKKRRRRRRRRKRKKKKKRQQQQQSSSSTNSSSTTATTSTAQNHQQQKKQQKNNNKNSARKRRRNLLQNQQSRRRRQHQNARRKKKRRKKKKHKRKRRSATKKT   -0.00 |+          |
+ GAASRYYYYYYFNFFFFYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYFFFYFYYYYYYYYYYYYFFAYYYYYFFYYAYYFYYHYYYYYYYYFFYYSYYH    0.20 |+++        |
+ GGGGQRNGGGHGLGGGGSSSGSRHGGGGQNHNRGMAGLASKAYAAGRRRGGGGGGGGGGGGRGGGGAACGGRGGRGGGGGRGGGKGRRHHRRGGRRGHAQRRSKLGNRQLEARNNHGGGRGGESGGSKR   -0.00 |+          |
+ VVHEHGKAAVIGPGGGGKRSGKRNKGRNGGGGGEGENGKKRRQDGGQRARHRRRRRRRRRRRRRRRRGRGGRRRRGRRRRRRRRRNQHRRRRRRRRRRGRRRGG GRSENIQAVIMQGAGRSREDTRLI    0.00 |+          |
+ RRRRSVFLLLRGLGGGGMDFVFIKAVELIVVVVVIVLLAVIVDRRAQEQNTFFYFYFFFFFVFFFQFVIIIELLELFFLAAIYVVLQHNNLLFHLLANVATHAR RRRVTHRREGIDKGKRTFINSEEV    0.00 |+          |
+                                             R                                                                                        0.20 |+++        |
+                                             V                                                                                        0.20 |+++        |
+ *
+
+ MEAN CONSERVATION =    0.21820
+ STANDARD DEVIATION     0.27739
+ Times: TOTAL:     10.884 USER :     10.717 SYSTEM:     0.167
