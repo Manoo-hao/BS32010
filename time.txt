@@ -1,0 +1,32 @@
+0 randomisations
+[mblank@ts-ug-6 PF01924]$ time ./amps < PF01924_pairs.com
+real	0m39.279s
+user	0m38.346s
+sys	0m0.742s
+
+
+10 randomisations
+[mblank@ts-ug-6 PF01924]$ time ./amps < PF01924_pairs.com
+real	6m7.576s
+user	6m6.056s
+sys	0m0.619s
+
+
+20 randomisations
+[mblank@ts-ug-6 PF01924]$ time ./amps < PF01924_pairs.com
+real	11m22.444s
+user	11m19.416s
+sys	0m1.691s
+
+
+100 randomisations
+[mblank@ts-ug-6 PF01924]$ time ./amps < PF01924_pairs.com
+real	54m52.162s
+user	54m46.565s
+sys	0m1.294s
+
+100 again
+[mblank@ts-ug-6 PF01924]$ time ./amps < PF01924_pairs.com
+real	48m30.875s
+user	48m23.823s
+sys	0m1.712s
