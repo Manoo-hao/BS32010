@@ -1,10 +1,4 @@
-#Introduction
-
-This repository contains documents and code associated with the 
-multiple sequence alignment assessment of the BS32010 - Applied 
-Bioinformatics Module 2015.
-
-#Content of this repository
+#Assignment 2
 
 ###PFAM dataset files
 
