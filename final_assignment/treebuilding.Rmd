@@ -1,0 +1,84 @@
+```{r}
+setwd("K:/BI Assignment/Final assignment/DNA")
+homologs3_aligned <- read.table("K:/BI Assignment/Final assignment/DNA/homologs3_aligned.txt", quote="\"")
+```
+
+```{r}
+if(!require(ape)) install.packages("ape")
+if(!require(phangorn)) install.packages("phangorn")
+```
+
+```{r}
+x<-read.dna("YHL021C_aligned.txt",format="fasta")
+d<-dist.dna(x)
+```
+
+```{r}
+##plotting stuff##
+njd<-nj(d)
+plot(njd)
+plot(njd,"f")
+plot(njd);nodelabels();tiplabels();edgelabels()
+plot(njd);nodelabels();add.scale.bar(length=0.1)
+plot(njd);nodelabels();axisPhylo(side=1)
+```
+
+```{r}
+##residuals from distance metrics##
+par(mfrow=c(2,3))
+tr.upgma<-upgma(d)
+dt.upgma<-cophenetic(tr.upgma)
+dmat<-as.matrix(d)
+nms<-rownames(dmat)
+dt.upgma<-dt.upgma[nms, nms]
+dt.upgma<-as.dist(dt.upgma)
+plot(dt.upgma-d,ylab="residuals",ylim=c(-0.05,0.05),cex=0.5,main="UPGMA")
+abline(h=0,lty=3)
+tr.wpgma<-wpgma(d)
+dt.wpgma<-cophenetic(tr.wpgma)
+dmat<-as.matrix(d)
+nms<-rownames(dmat)
+dt.wpgma<-dt.wpgma[nms, nms]
+dt.wpgma<-as.dist(dt.upgma)
+plot(dt.wpgma-d,ylab="residuals",ylim=c(-0.05,0.05),cex=0.5,main="WPGMA")
+abline(h=0,lty=3)
+tr.nj<-nj(d)
+dt.nj<-cophenetic(tr.nj)
+dmat<-as.matrix(d)
+nms<-rownames(dmat)
+dt.nj<-dt.nj[nms, nms]
+dt.nj<-as.dist(dt.nj)
+plot(dt.nj-d,ylab="residuals",ylim=c(-0.05,0.05),cex=0.5,main="Neighbour-joined")
+abline(h=0,lty=3)
+tr.bionj<-bionj(d)
+dt.bionj<-cophenetic(tr.bionj)
+dt.bionj<-dt.bionj[nms, nms]
+dt.bionj<-as.dist(dt.bionj)
+plot(dt.bionj-d,ylab="residuals",ylim=c(-0.05,0.05),cex=0.5,main="BIONJ")
+abline(h=0,lty=3)
+tr.fastme<-fastme.bal(d,nni=T,spr=T,tbr=T)
+dt.fastme<-cophenetic(tr.fastme)
+dt.fastme<-dt.fastme[nms, nms]
+dt.fastme<-as.dist(dt.fastme)
+plot(dt.fastme,ylab="residuals",ylim=c(-0.05,0.05),cex=0.5,main="FastME.BAL")
+abline(h=0,lty=3)
+tr.fastme2<-fastme.ols(d,nni=T)
+dt.fastme2<-cophenetic(tr.fastme2)
+dt.fastme2<-dt.fastme2[nms, nms]
+dt.fastme2<-as.dist(dt.fastme2)
+plot(dt.fastme,ylab="residuals",ylim=c(-0.05,0.05),cex=0.5,main="FastME.OLS")
+abline(h=0,lty=3)
+```
+
+```{r}
+par(mfrow=c(1,1))
+dm<-dist.dna(x)
+tree<-NJ(dm)
+fit=pml(tree,as.phyDat(x))
+fit=optim.pml(fit,T)
+bs<-bootstrap.pml(fit,bs=100,optNni=T)
+#treeBS<-plotBS(fit$tree,type="fan",bs,no.margin=T)
+treeBS<-plotBS(fit$tree,type="phylogram",bs,no.margin=T);add.scale.bar(length=0.1)
+#rooted<-root(treeBS,outgroup="YHL021_Yeast")
+#plot(rooted)
+```
