@@ -6,7 +6,7 @@ module BS32010 Applied Bioinformatics.
 ##Files
 
 
-###dge_markdown
+###final_assignment_code
 
 An R-markdown file that is largely the markdown file used by Dr. 
 Schofield in one of her workshops. A few subtle changes have been made, 

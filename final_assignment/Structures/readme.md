@@ -17,3 +17,9 @@ to SWISS-MODEL homepage")
 The files sequentially named catalytic are chimera sessions that were 
 saved as snapshots when constructing the overlaid structure of the 
 functional site as seen in Fig. 9B in the report.
+
+###SWISS_MODEL_Report
+
+A pdf report exported from SWISS MODEL after selecting a template and 
+building a model based on it. This report contains quality assessment, 
+statistics, and additional information about the modelling process.

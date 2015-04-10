@@ -1,0 +1,628 @@
+#http://www.compbio.dundee.ac.uk/user/pschofield/Teaching/BS32010/code/RNAseq.cml
+
+---
+title: "RNA-seq Bioconductor"
+author: "Pieta Schofield"
+date: "February 2015"
+output:
+  html_document:
+    highlight: kate
+    fig_caption: yes
+    fig_height: 4
+    fig_width: 9
+---
+
+<!-- 
+  Comments in rmarkdown look like this
+  There are also comments in the code chunks which are the lines that start with a #
+-->
+# optional parameters(r-code, name, displayed, results displayed, error messages displayed)
+```{r setup,echo=FALSE,results="hide",warning=FALSE,message=FALSE}
+#
+# This chunk sets up stuff to make my life easier it does not display. Most of this is 
+# necessary to ease editing with vim and the vim-R-plugin rather than RStudio.
+#
+# Here I am just setting up the file names and paths so when I want to drag in files or 
+# generate output it is in the places I expect. 
+#
+# set the line widths for the outputs
+#
+options(width = 100)
+# source bioconductor so it can install any missing packages
+source("http://bioconductor.org/biocLite.R")
+# set up the paths
+fileName <- "Workshop2"
+#try to install package and if fails, tries to load it.
+if(!require(ggplot2)) install.packages("ggplot2")
+if(!require(reshape2)) install.packages("reshape2")
+if(!require(plyr)) install.packages("plyr")
+if(!require(Gviz)) biocLite("Gviz")
+if(!require(seqTools)) biocLite("seqTools")
+if(!require(edgeR)) biocLite("edgeR")
+if(!require(GenomicAlignments)) biocLite("GenomicAlignments")
+if(!require(Rsubread)) biocLite("Rsubread")
+#set working directory to user my directory on server
+setwd("~/.")
+resDir <- "/usr/local/share/BS32010/expression/data/"
+locDir <- paste0(getwd(),"/BS32010/")
+outDir <- locDir #setting up local directory on own file space
+imgDir <- locDir # setting up subdirectory in the local directory
+imgURL <- "http://www.compbio.dundee.ac.uk/user/pschofield/Teaching/BS32010/figures/"
+if(!file.exists(locDir)) dir.create(locDir)
+```
+
+# Reminder
+
+## RNA-seq
+1. High Throughput Sequencing
+    - Next Generation Sequencing(NGS)
+2. Several different platforms
+    - Illumina, Solid, Roche 
+3. Many applications
+    - gene expression, 
+    - SNP's,
+    - splice variants, 
+    - transcriptome assembly
+4. Can detect unannotated changes
+
+## RNA-seq
+ ![RNA-seq](`r paste0(imgURL,'F3small.jpg')`)
+
+##Data format (fastq)
+```{r chunk2, echo=FALSE,comment=NA}
+fq <- readLines(paste0(resDir,"example.fq"))
+out <- head(unname(sapply(fq,function(x) substr(x,1,min(70,nchar(x))))),16)
+writeLines(out)
+```
+
+## Processing Steps
+- Data quality assessment
+    - filtering
+    - trimming
+- Alignment to reference
+- Assign to features
+- Calculate differential expression
+- Downstream analysis of gene lists
+
+# RNA-seq in Bioconductor
+
+## Quality Assessment
+- Commandline tools such as `FastQC` and `fastx-toolkit`
+- Bioconductor tools `seqtools` and `ShortRead`
+```{r chunk3, results="hide",warning=FALSE,message=FALSE}
+# load the seqTools package
+require(seqTools)
+# run the fastqq function to calculate the quality scores
+fqFile <- paste0(resDir,"WT_1_R1.fq.gz")
+fqc <- fastqq(fqFile)
+# create an image file device to save the plot to
+phredPlot <- paste0(outDir,"phredPlot.png")
+png(phredPlot,width=800,height=500)
+# plot the phred quality scores and close the device
+plotPhredQuant(fqc, 1, "Phred quantiles for 1st file")
+dev.off()
+```
+
+## Vizualise Quality
+![The distribution of phred scores per base for sample of reads ](`r phredPlot`)
+
+## Quality Filtering
+- There a many tools for filtering fastq files 
+    - remove low quality reads
+    - trim poor quality bases from reads
+    - remove adaptor sequence
+- Commandline tools such as `picard`, `fastx-toolkit` and `trimmomatic`
+- Bioconductor packages: again `seqTools` and `ShortRead`
+```{r chunk4,echo=FALSE}
+oFile <- paste0(outDir,"keep.fq.gz")
+dFile <- paste0(outDir,"disc.fq.gz")
+```
+
+## Pair Filtering
+- Aligners expect matching reads
+    - although reads have pair identifiers aligners do not use these thay assume the files are
+      in matching order
+    - If you drop a read from one file you must drop its pair from the other
+```{r chunk5}
+trimFastq(fqFile, outfile=oFile, discard=dFile, qualDiscard=10, qualMask=15,
+          fixTrimLeft=2, fixTrimRight=2, qualTrimLeft=28, qualTrimRight=30, minSeqLen=5)
+```
+
+## Alignment
+![Trapnell & Salzberg Nature Biotechnology (2009)](`r paste0(imgURL,'nbt0509-455-F2.jpg')`)
+
+## Alignment
+- Splice aware aligner (again many)
+    - `subread`, `subjunc`, `tophat`, `star`...
+- Reference genome index
+    - build from a fasta for the specific aligner
+- Annotation file 
+    - optional depending on the aligner used to influence alignment
+- Read file(s)
+    - fastq file(s), either one single end reads or two for paired end reads
+
+## `Rsubread`
+- R bioconductor provides wrappers for several aligners
+    - some more convenient than others
+- For simplicity I will focus on `Rsubread`
+- Two aligners
+    - subread-align / align() 
+    - subjunc / subjunc() 
+- Break read up into small pieces
+    - alignes the pieces
+    - region where most pieces align "voted" as the read location
+
+## Loading Rsubread
+```{r chunk7, eval=FALSE}
+# Load the package
+require("Rsubread")
+
+# See what recipie files are available
+vignette("Rsubread")
+
+# In the case of Rsubread and edgeR there are extensive manuals also
+RsubreadUsersGuide()
+```
+
+```{r chunk8a, echo=FALSE}
+# This chunk is here for completeness I create a subdirectory to do all the work in
+# and change location to the directory
+if(!file.exists(paste0(locDir,"/BS32010_rnaseq"))) dir.create(paste0(locDir,"/BS32010_rnaseq"))
+setwd(paste0(locDir,"/BS32010_rnaseq"))
+```
+
+## Build an Index
+- Download the genomic reference in FASTA for your species form 
+```{r chunk8, eval=FALSE, results="hide", message=FALSE, warning=FALSE}
+# R.utils package for the download.file() function
+require(R.utils)
+if(!file.exists(paste0(locDir,"/BS32010_rnaseq"))) dir.create(paste0(locDir,"/BS32010_rnaseq"))
+setwd(paste0(locDir,"/BS32010_rnaseq"))
+# specify the location of the yeast genome file on the ENSEMBL ftp server
+faURL <- "ftp://ftp.ensembl.org/pub/release-78/fasta/saccharomyces_cerevisiae/"
+faURL <- paste0(faURL,"dna/Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa.gz")
+# give a slightly nicer local file name
+faFile <- paste0(locDir,"BS32010_rnaseq/Scerevisiae_R64.fa")
+download.file(faURL, paste0(faFile,".gz"))
+indexName <- paste0(locDir,"BS32010_rnaseq/Scerevisiae_R64")
+if(!file.exists(faFile)) gunzip(paste0(faFile,".gz"))
+buildindex(basename=indexName,reference=faFile)
+```
+
+## Align paired end files
+- For paired reads either 2 files or interleaved
+    - paired reads must be kept as pairs 
+    - aligners are generally not pair aware
+
+```{r chunk10, eval=FALSE, results="hide", message=FALSE, warning=FALSE}
+# setup the paired read files
+reads1 <- paste0(resDir,"WT_1_R1.fq.gz")
+reads2 <- paste0(resDir,"WT_1_R2.fq.gz")
+# Align the reads to the reference index
+align(index=indexName, readfile1=reads1, readfile2=reads2, 
+      output_file=paste0(outDir,"WT_1U.BAM"))
+# sort and index the bam file with functions from Rsamtools package
+sfile <- sortBam(paste0(outDir,"WT_1U.BAM"),paste0(outDir,"WT_1"))
+indexBam(sfile)
+reads <- readGAlignments(sfile)
+```
+
+<!-- 
+    this chunk is used to align then sort and index the full set of 
+    yeast data to the full yeast index
+-->
+
+```{r chunk10a1,echo=FALSE,eval=FALSE}
+# Align all the fastqs in pairs
+fileStubs <- unique(sapply(list.files(resDir,pattern=".*gz"),
+                function(x) head(strsplit(x,"_R")[[1]],1)))
+mclapply(fileStubs,function(fs){
+  reads1 <- paste0(resDir,fs,"_R1.fq.gz")
+  reads2 <- paste0(resDir,fs,"_R2.fq.gz")
+  # Align the reads to the reference index
+  align(index=indexName, readfile1=reads1, readfile2=reads2, 
+      output_file=paste0(outDir,fs,"U.BAM"))
+  # sort and index the bam file
+  sfile <- sortBam(paste0(outDir,fs,"U.BAM"),paste0(outDir,fs))
+  indexBam(sfile)
+},mc.cores=8)
+```
+<!-- Finish -->
+
+## Aligned Reads
+```{r chunk11,comment=NA,echo=FALSE,message=FALSE,warning=FALSE}
+reads <- readGAlignments(paste0(outDir,"WT_1.bam"))
+reads
+```
+
+## Alignment Visualisation
+- Genome Browsers will normally import and display BAM files
+    - IGV, IGB, UCSC 
+```{r chunk12a, eval=FALSE}
+# load the Gviz package
+require(Gviz)
+# unfortunately we are using none UCSC naming 
+options(ucscChromosomeNames=FALSE)
+#make two tracks
+wtTrack <- AlignmentsTrack(paste0(resDir,"WT_1.bam"),isPaired=T,
+                           name="WT_1",chr="X",genome="sce3")
+snf2Track <- AlignmentsTrack(paste0(resDir,"Snf2_1.bam"),isPaired=T,
+                             name="Snf2_1",chr="X",genome="sce3")
+# and plot them
+plotTracks(c(wtTrack,snf2Track),chromosome="X",genome="sce3",from=2e4,to=5e4)
+```
+
+## Alignment Visualisation
+```{r chunk12b, fig.width=9, fig.height=5, fig.caption="Gviz plot of bamfile alignments",echo=FALSE}
+require(Gviz)
+options(ucscChromosomeNames=FALSE)
+wtTrack <- AlignmentsTrack(paste0(resDir,"WT_1.bam"),isPaired=T,
+                           name="WT_1",chr="X",genome="sce3")
+snf2Track <- AlignmentsTrack(paste0(resDir,"Snf2_1.bam"),isPaired=T,
+                             name="Snf2_1",chr="X",genome="sce3")
+# and plot them
+plotTracks(c(wtTrack,snf2Track),chromosome="X",genome="sce3",from=2e4,to=5e4)
+```
+
+##Assignment
+- Aligners produce alignments SAM BAM ALN formats
+- SAM/BAM are very common 
+    - samtools, sambamba software for manipulating 
+- There are several tools for read assignment
+    - commandline htseq-count and featureCounts, 
+- With-in Bioconductor 
+    - overlap functions in GenomicRanges, GenomicAlignments
+    - featureCounts in Rsubread
+
+## Annotation Tracks
+```{r chunk13b, }
+if(!require(biomaRt)) biocLite("biomaRt")
+require(biomaRt)
+bm <- useMart(biomart="ensembl",dataset="scerevisiae_gene_ensembl")
+fm <- Gviz:::.getBMFeatureMap()
+biomTrack <- BiomartGeneRegionTrack(genome = "sce3", chromosome = "X", biomart=bm,
+                                    start = 2e4, end = 5e4, name = "ENSEMBL",shape="arrow",
+                                    showId=TRUE,transcriptAnnotation="gene")
+```
+
+##
+```{r chunk13c, fig.width=9,fig.height=5}
+plotTracks(c(wtTrack,snf2Track,biomTrack),chromosome="X",
+                  extend.left=-1000,genome="sce3",from=2e4,to=5e4)
+```
+
+## Assignment
+- Alignment 
+    - depending on tool (SAM, BAM, sorted index)
+- Annotation
+    - GTF, GFF, GenomicRanges
+- R/Subread package 
+    - featureCounts function
+
+## Get the annotations
+```{r chunk13d, eval=FALSE}
+faURL <- "ftp://ftp.ensembl.org/pub/release-78/gtf/saccharomyces_cerevisiae/"
+faURL <- paste0(faURL,"Saccharomyces_cerevisiae.R64-1-1.78.gtf.gz")
+# give a slightly nicer local file name
+gtfFile <- paste0(locDir,"BS32010_rnaseq/Scerevisiae_R64.gtf")
+# download and unzip the file
+download.file(faURL, paste0(gtfFile,".gz"))
+if(!file.exists(gtfFile)) gunzip(paste0(gtfFile,".gz"))
+```
+```{r chunk13e,echo=FALSE}
+gtfFile <- paste0(locDir,"BS32010_rnaseq/Scerevisiae_R64.gtf")
+```
+
+## featureCounts
+```{r chunk13f1,eval=FALSE,message=FALSE,warning=FALSE,results="hide"}
+bamfiles <- list.files(resDir,pattern=".*bam$",full=TRUE)
+fc <- featureCounts(files=bamfiles, annot.ext=gtfFile, isGTFAnnotationFile=TRUE, 
+                    GTF.featureType="exon", GTF.attrType="gene_id")
+fc$targets <- sapply(fc$targets,function(x) tail(strsplit(x,"[.][.]")[[1]],1)) 
+colnames(fc$counts) <- fc$targets
+colnames(fc$stat)[2:length(colnames(fc$stat))] <- fc$targets
+```
+
+
+## Useful tip 
+- to avoid repeating lengthy processing step you can save R object 
+```{r chunk13f2a,eval=FALSE}
+save(fc,file="fc.Rdata")
+```
+- then reload the object on subsequent compiles if it has been created already
+- so you code might look like
+```{r chunk132c, eval=FALSE}
+if(!file.exists("objectname.RData")){
+  ... do processing
+  save(objectname,"objectname.Rdata")
+}else{
+  load("objectname.RData")
+}
+```
+
+
+##for final report start here with a provided dataset
+#dge <- DGElist(fc$counts,group=condition)
+load("/usr/local/share/BS32010/expression/data/fullFC.RData")
+summary(fc)
+fc$targets
+
+
+## Feature Count object
+```{r chunk13f3,comment=NA}
+#load(paste0(resDir,"fc.Rdata")) previously loaded dataset
+load("/usr/local/share/BS32010/expression/data/fullFC.RData")
+summary(fc)
+```
+
+## Counts
+```{r chunk13g, comment=NA}
+head(fc$counts)
+```
+
+## Annotation
+```{r chunk13h, comment=NA}
+head(fc$annotation)
+```
+
+## Assignment Statistics
+```{r chunk13i, comment=NA}
+fc$stat
+```
+<!-- 
+    this chunk is executed silently and then the next identical chunk is not executed
+    this is to hide the if(!exists statement for simplicity but it speeds up the compilation
+    to not recalculate the cluster every time during development
+--> 
+```{r chunk13j1,echo=FALSE,messages=FALSE,warning=FALSE,results="hide"}
+library(pvclust)
+if(!exists("pvcl")){
+  pvcl <- pvclust(fc$counts)
+}
+```
+
+## Visualise Samples 
+```{r chunk13j,eval=FALSE,messages=FALSE,warning=FALSE,results="hide"}
+library(pvclust)
+pvcl <- pvclust(fc$counts)
+```
+
+```{r chunk14, echo=FALSE}
+plot(pvcl)
+```
+
+## Multi-Dimensional Scaling Plot
+```{r chunk14a,eval=FALSE}
+plotMDS(dge)
+```
+```{r chunk14b, echo=FALSE, message=FALSE, warning=FALSE, results="hide"}
+require(edgeR)
+condition <- as.factor(sapply(colnames(fc$counts),function(cn){ head(strsplit(cn,"_")[[1]],1)})) 
+condition <- relevel(condition,"WT")
+dge <- DGEList(fc$counts,group=condition)
+plotMDS(dge)
+```
+
+# Normalisation
+
+## Technical variation 
+- Variation between sample
+    - library size (total reads in sample)
+- Variation between genes
+    - gc content
+    - gene length
+- You WILL need to normalise your normalisation choice WILL effect your result    
+    - performing several and looking for results robust to normalisation is a statisticaly 
+      conservative approach but not necessarily biologically justifiable
+
+## Limited Resources
+- Limited chemistry in sequencing
+    - highly expressed genes use proportionally more
+- Fall in expression of highly expressed gene makes more resources available
+   - other genes appear to have increased but it is an effect of chemistry
+- Assumption that overall transcription is unchanged
+   - normalise to recentre the foldchange distribution
+
+## Library size
+- Several variations exist Total Count
+$$
+   N_s=R_{s}/R_{t}
+$$
+    where $R_s$ is total reads in the sample $R_t$ is total reads in all samples
+    - Median 
+    - Upper Quartile
+
+## Distribution based
+- Quantile  
+    - makes tha assumption the shape of the read distribution is constant
+    - uses a reference distribution and adjust the distribution of the samples
+```{r chunk14c, echo=FALSE, fig.width=4, fig.height=4}
+qqplot(fc$counts[,1],fc$counts[,3], pch=20, main="Quantile-Quantile Plot", 
+       xlab="Quantiles sample WT_1", ylab="Quantiles sample Snf2_1")
+abline(0,1,col="red")
+```
+
+## Gene Length
+- RPKM
+    - Read pre thousand base pairs per million reads
+    - Counts per million
+$$
+R_{PKM}=R_g\frac{1000}{L_g}\frac{1000000}{R_s}
+$$
+    - $R_g$ reads assigned to gene g
+    - $L_g$ length of gene g in base pairs
+    - $R_s$ total reads in the sample
+
+## Other normalisation
+- Model fit normalisation
+    - edgeR 
+        - TMM (Trimmed Mean of M-values)
+        - RLE (Relative log expression)
+    - DESeq
+        - calculates the median for all genes in a sample of the ratio of the read count to 
+          geometric mean for that gene across samples
+$$
+M_{gss'}=log_2(\frac{R_{gs}/R_{s}}{R_{gs'}/N_{s'}})
+A_{gss'}=log_2(R_{gs}/R_{s} \dot R_{gs'}/N_{s'})
+$$
+- DESeq and edgeR assume these normalisations and take them into account in the model fitting
+
+## Spike-in or Housekeeping
+- Spike ins
+    - artificially introduced RNAs of "known" concentrations of fold change used to normalise
+- Housekeeping genes
+    - genes that are expected from biological knowledge to be unchanging
+
+## Differential Expression
+
+#next step for final report
+
+```{r chunk15,eval=FALSE}
+require(edgeR)
+edgeRUsersGuide()
+```
+```{r chunk16, comment=NA}
+condition <- as.factor(sapply(colnames(fc$counts),function(cn){ head(strsplit(cn,"_")[[1]],1)})) 
+condition <- relevel(condition,"WT")
+condition
+```
+```{r chunk17}
+dge <- DGEList(fc$counts,group=condition)
+```
+
+## DGEList Object
+```{r chunk18, echo=FALSE, comment=NA}
+dge
+```
+
+## No Normalisation
+```{r chunk19a, message=FALSE,warning=FALSE, results="hide"}
+if(!require(splines)) biocLite("splines")
+if(!exists("lrt")){
+ design <- model.matrix(~condition)
+ dge <- estimateGLMCommonDisp(dge,design)
+ dge <- estimateGLMTrendedDisp(dge,design)
+ dge <- estimateGLMTagwiseDisp(dge,design)
+ fit <- glmFit(dge,design)
+ lrt <- glmLRT(fit,coef=2)
+ tt <- topTags(lrt,n=10000)
+}
+```
+
+## Normalise
+```{r chunk19c, message=FALSE,warning=FALSE, results="hide"}
+if(!exists("nlrt")){
+  ndge <- calcNormFactors(dge)
+  ndge <- estimateGLMCommonDisp(ndge,design)
+  ndge <- estimateGLMTrendedDisp(ndge,design)
+  ndge <- estimateGLMTagwiseDisp(ndge,design)
+  nfit <- glmFit(ndge,design)
+  nlrt <- glmLRT(nfit,coef=2)
+  ntt <- topTags(nlrt,n=10000)
+}
+```
+
+## MA Plots
+```{r chunk19d, echo=FALSE, message=FALSE, warning=FALSE, results="hide"}
+nonMAplot <- paste0(outDir,"nnMAplot.png")
+png(nonMAplot,width=400,height=400)
+plotSmear(lrt)
+abline(h=0,col="red")
+dev.off()
+normMAplot <- paste0(outDir,"normMAplot.png")
+png(normMAplot,width=400,height=400)
+plotSmear(nlrt)
+abline(h=0,col="red")
+dev.off()
+```
+| --- | --- |
+| ![no normalisation](`r nonMAplot`) | ![TMM normalisation](`r normMAplot`) |
+| raw counts | TMM normalisation |
+
+
+## Statistical Testing
+- Assumes [negative bionomial](Workshop1.html#40) distribution
+- "Borrows" information across genes
+    - doubly fits the count data to a NB distribution
+        - predicted variance for given expression
+- Uses GLM to test using predicted variance rather than actual sample variance for that gene
+
+
+## Gene Lists
+```{r chunk20}
+ntt$table[20:30,]
+```
+
+## Get Annotations
+- it is possible to download the annotation for the enriched genes from Ensembl
+```{r chunk20a}
+annot <- getBM(attributes=c("ensembl_gene_id","external_gene_name", "chromosome_name",
+                            "start_position","end_position","strand","description"),
+               filter="ensembl_gene_id",
+               values=rownames(nlrt)[1:200],
+               mart=bm)
+```
+
+## Annotation
+```{r chunk20b,echo=FALSE}
+annot[3:5,]
+```
+
+
+## Gene Set Enrichment
+- The a many tool in R- bioconductor for analysing lists of genes for enriched annotation
+- Programmatic Access to online databases
+    - Annotation (ENSEMBL) 
+    - GO / KEGG
+    - pathview
+    - STRINGdb
+
+## STRINGdb 
+- STRINGdb is a package for looking for Gene Ontology terms and KEGG pathways using the STRING online database
+```{r chunk21, message=FALSE, warning=FALSE, results="hide"}
+# Load the STRINGdb package
+require(STRINGdb)
+# create a connection to the Saccharomyces cerevisiae data (species 4932)
+stringDB <- STRINGdb$new( version="9_05", species=4932, score_threshold=0, input_directory="")
+# filter the gene list for those that are mapped in the stringDB
+genes <- as.data.frame(nlrt$table)
+genes <- genes[order(genes$PValue,decreasing=F),]
+genes$adjp <- p.adjust(genes$PValue,method="BH")
+genes$geneid <- rownames(genes)
+mapped <- stringDB$map(genes,"geneid", removeUnmappedRows=TRUE)
+```
+
+## 
+```{r chunk22,fig.width=9,fig.height=5}
+stringDB$plot_network(mapped$STRING_id[1:20])
+```
+
+## GO terms
+```{r chunk23, eval=FALSE}
+backgroundV <- mapped$STRING_id
+stringDB$set_background(backgroundV)
+
+sig <- mapped[which(mapped$adjp<=0.05),]
+enrichGOBP <- stringDB$get_enrichment( sig, category = "Process", 
+                                      methodMT = "fdr", iea = TRUE )
+enrichKEGG <- stringDB$get_enrichment( sig, category = "KEGG", methodMT = "fdr", 
+                                      iea = TRUE )
+head(enrichmentGO, n=7)
+head(enrichmentKEGG, n=7)
+```
+
+## Clusters
+```{r chunk24,fig.width=9,fig.height=5}
+clustersList <- stringDB$get_clusters(mapped$STRING_id[1:60])
+```
+```{r chunk25,fig.width=9,fig.height=5,echo=FALSE}
+par(mfrow=c(1,2))
+lapply(clustersList[1:2],stringDB$plot_network)
+```
+
+# End of Part III
+
+##
+- [Bioconductor](Workshop4.html)
+- [Introduction](Workshop1.html)
+
