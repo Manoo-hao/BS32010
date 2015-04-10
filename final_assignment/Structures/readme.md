@@ -4,12 +4,12 @@
 
 The file 3o2g.pdb is a file that contains the crystal structure of the 
 human [gamma-butyrobetaine 
-dioxygenase](https://www.rcsb.org/pdb/explore/explore.do?structureId=3o2g "Link 
+dioxygenase](http://www.rcsb.org/pdb/explore/explore.do?structureId=3o2g "Link 
 to Structure on PDB"). This structure was selected as a template for 
 modelling the yeast ortholog which has an as yet unsolved structure.
 
 YHL021.pdb contains the structural model of the yeast ortholog that was 
-built based on 3o2g.pdb, using [SWISS-MODEL](https://swissmodel.expasy.org "Link 
+built based on 3o2g.pdb, using [SWISS-MODEL](http://swissmodel.expasy.org "Link 
 to SWISS-MODEL homepage")
 
 ###py files
