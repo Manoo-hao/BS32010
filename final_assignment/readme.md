@@ -39,11 +39,12 @@ homologs after alignment with T-coffee Expresso.
 
 ###Raw sequences
 
-Contains the unaligned amino acid sequences of the identified homologs.
+Contains the unaligned amino acid and DNA sequences of the identified 
+homologs.
 
 ###Structures
 
-Contains pdb files of a crystal structure that was retrieved from the 
-protein databank as a model, and a structure of a homolog that was 
+Contains .pdb files of a crystal structure that was retrieved from the 
+protein databank(PDB) as a model, and a structure of a homolog that was 
 modelled based on it. Furthermore, sequential chimera-sessions were 
-added in order to reconstruct illustrations used in the report
+added in order to reconstruct illustrations used in the report.
