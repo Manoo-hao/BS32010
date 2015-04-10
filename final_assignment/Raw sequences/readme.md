@@ -8,5 +8,5 @@ are name in the following way:
 corresponding yeast ortholog.
 
 2. The suffixes:
-..* -p refers to amino acid sequences
-..* -d to nucleotide sequences
+  * -p refers to amino acid sequences
+  * -d to nucleotide sequences
